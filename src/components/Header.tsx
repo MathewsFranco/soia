@@ -8,8 +8,8 @@ export default function Header() {
 
   return (
     <>
-      <header className="p-4 flex items-center justify-between  bg-gray-200 text-rich-back shadow-lg">
-        {/* TODO: remove this nav bar */}
+      <header className="p-4 flex items-center justify-between  text-ink ">
+        {/* TODO: update this to only show when mobile */}
         <div className="flex items-center">
           <button
             onClick={() => setIsOpen(true)}
@@ -18,7 +18,7 @@ export default function Header() {
           >
             <Menu size={24} />
           </button>
-          {/* TODO: remove this nav bar */}
+          {/* TODO: update this to only show when mobile */}
 
           <h1 className="ml-4 text-xl font-semibold">
             <Link to="/">
