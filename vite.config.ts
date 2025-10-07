@@ -6,7 +6,6 @@ import viteReact from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/soia/',
   plugins: [
     TanStackRouterVite({ autoCodeSplitting: true }),
     viteReact(),
