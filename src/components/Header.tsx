@@ -1,5 +1,4 @@
 import { Link } from '@tanstack/react-router'
-import { Menu } from 'lucide-react'
 import SideMenu from './SideMenu'
 import { useState } from 'react'
 
@@ -8,40 +7,37 @@ export default function Header() {
 
   return (
     <>
-      <header className="p-4 flex items-center justify-between  text-ink ">
-        {/* TODO: update this to only show when mobile */}
+      <header className="  py-8 pl-25 pr-15 flex items-center justify-between bg-ink text-linen">
         <div className="flex items-center">
-          <button
+          {/* TODO: update this to only show when mobile */}
+          {/* <button
             onClick={() => setIsOpen(true)}
             className="p-2 hover:bg-gray-700 rounded-lg transition-colors"
             aria-label="Open menu"
           >
             <Menu size={24} />
-          </button>
+          </button> */}
           {/* TODO: update this to only show when mobile */}
 
-          <h1 className="ml-4 text-xl font-semibold">
-            <Link to="/">
-              <img
-                src="/soia-logo-black.png"
-                alt="Soia Logo"
-                className="h-16"
-              />
-            </Link>
-          </h1>
+          <Link to="/">
+            <img src="/soia-logo-white.png" alt="Soia Logo" className="h-12" />
+          </Link>
         </div>
-        <nav className="flex gap-6 text-lg font-bold">
+        <nav className="flex gap-12 text-lg font-bold ">
           <Link to="/" className="hover:text-cyan-400 transition-colors ">
-            Inicio
+            Home
           </Link>
           <Link to="/" className="hover:text-cyan-400 transition-colors">
             Sobre
           </Link>
           <Link to="/" className="hover:text-cyan-400 transition-colors">
+            Serviços
+          </Link>
+          <Link to="/" className="hover:text-cyan-400 transition-colors">
             Conteúdos
           </Link>
           <Link to="/" className="hover:text-cyan-400 transition-colors">
-            Contato
+            Contatos
           </Link>
         </nav>
       </header>
