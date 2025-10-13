@@ -7,7 +7,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="  py-8 pl-25 pr-15 flex items-center justify-between bg-ink text-linen">
+      <header className="  py-8 pl-25 pr-15 flex items-center justify-between bg-black text-linen">
         <div className="flex items-center">
           {/* TODO: update this to only show when mobile */}
           {/* <button
