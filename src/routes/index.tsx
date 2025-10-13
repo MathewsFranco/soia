@@ -1,4 +1,4 @@
-import Carousel from '@/components/Carousel'
+import Footer from '@/components/Footer'
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/')({
@@ -8,24 +8,53 @@ export const Route = createFileRoute('/')({
 function App() {
   return (
     <>
-      <div className="h-120 border-2 border-amber">
-        <Carousel />
-      </div>
-
-      <div className=" p-2 text-3xl text-ink my-8 gap-6 flex items-center justify-center flex-col sm:flex-row ">
-        <div>
-          <p>
-            A SOIA é agência que conecta a sua marca as gerações que estão
-            impulsionando o mercado.
-          </p>
-          <p>
-            Mais do que comunicar, buscamos entender o que move o consumo
-            transformando percepções em experiências marcantes.
-          </p>
+      <img
+        src="/keyboard.jpeg"
+        alt="Soia Banner"
+        className="h-160 w-full object-cover object-[center_70%]"
+      />
+      <div className="my-8 flex sm:flex-row ">
+        <div className="flex-col justify-center align-middle bg-amber text-linen">
+          <h2 className="font-bold mb-4">QUEM SOMOS</h2>
+          <div className="text-xl ">
+            <p>
+              A SOIA é agência que conecta a sua marca as gerações que estão
+              impulsionando o mercado.
+            </p>
+            <p>
+              Mais do que comunicar, buscamos entender o que move o consumo
+              transformando percepções em experiências marcantes.
+            </p>
+          </div>
         </div>
-        <img src="/tv.jpeg" alt="Soia Logo" className="h-120 self-center" />
+        <img
+          src="/public/model.jpeg"
+          alt="Soia Logo"
+          className="h-140 object-cover"
+        />
+      </div>
+      <div className="flex sm:flex-row ">
+        <div className="flex-col justify-center align-middle bg-black text-linen">
+          <h2 className="font-bold mb-4">Sobre a Soia</h2>
+          <div className="text-xl ">
+            <p>
+              A SOIA é agência que conecta a sua marca as gerações que estão
+              impulsionando o mercado.
+            </p>
+            <p>
+              Mais do que comunicar, buscamos entender o que move o consumo
+              transformando percepções em experiências marcantes.
+            </p>
+          </div>
+        </div>
+        <img
+          src="/magazines.jpeg"
+          alt="Soia Logo"
+          className="h-140 object-cover"
+        />
       </div>
       <div className=" p-2 text-3xl text-ink my-8 gap-6 flex items-center justify-center flex-col sm:flex-row ">
+        <h2 className="font-bold mb-4">Nossos Serviços</h2>
         <div>
           <p>
             A SOIA observa, analisa e transforma o comportamento humano em
@@ -52,8 +81,24 @@ function App() {
             memorável.
           </p>
         </div>
-        <img src="/orange.jpeg" alt="Soia Logo" className="h-120" />
+        <img src="/shoes.jpeg" alt="Soia Logo" className="h-120" />
       </div>
+      <div className=" p-2 text-3xl text-ink my-8 gap-6 flex items-center justify-center flex-col sm:flex-row ">
+        <h2 className="font-bold mb-4">Conheça nossa fundadora</h2>
+        <div>
+          <p>
+            Fabiana Tomaz é estrategista criativa e fundadora da SOIA. Com uma
+            trajetória marcada pela moda, branding e comportamento, transforma
+            cultura e tendências em estratégias que conectam marcas a pessoas de
+            forma genuína e relevante. Sua visão une sensibilidade estética,
+            pensamento estratégico e inovação para criar experiências que
+            transcendem o óbvio e constroem valor simbólico, emocional e
+            duradouro.
+          </p>
+        </div>
+        <img src="/owner.jpeg" alt="Soia Logo" className="h-120" />
+      </div>
+      <Footer />
     </>
   )
 }
