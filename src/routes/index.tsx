@@ -21,10 +21,6 @@ function App() {
               A SOIA é agência que conecta a sua marca as gerações que estão
               impulsionando o mercado.
             </p>
-            <p>
-              Mais do que comunicar, buscamos entender o que move o consumo
-              transformando percepções em experiências marcantes.
-            </p>
           </div>
         </div>
         <img
@@ -38,12 +34,14 @@ function App() {
           <h2 className="font-bold mb-4">Sobre a Soia</h2>
           <div className="text-xl ">
             <p>
-              A SOIA é agência que conecta a sua marca as gerações que estão
-              impulsionando o mercado.
+              Mais do que comunicar, buscamos entender o que move o consumo e
+              traduzir essas percepções em posicionamentos sólidos, narrativas
+              potentes e experiências marcantes.
             </p>
             <p>
-              Mais do que comunicar, buscamos entender o que move o consumo
-              transformando percepções em experiências marcantes.
+              Nosso trabalho une análise sociocultural, branding, inovação e
+              storytelling para criar marcas que transcendem produtos e se
+              tornam parte da vida das pessoas.
             </p>
           </div>
         </div>
