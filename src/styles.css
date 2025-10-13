@@ -16,6 +16,7 @@ code {
 
 @theme {
   --color-*: initial;
+  --color-black: #222022;
   --color-ink: #10181e;
   --color-parchment: #f2eecb;
   --color-crimson: #6b282c;
