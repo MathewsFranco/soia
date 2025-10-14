@@ -26,8 +26,9 @@ code {
 
 @theme {
   --color-*: initial;
-  --color-black: #222022;
-  --color-ink: #10181e;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-ink: #222022;
   --color-parchment: #f2eecb;
   --color-crimson: #6b282c;
   --color-mushroom: #c8baac;

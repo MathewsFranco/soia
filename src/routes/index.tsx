@@ -15,8 +15,8 @@ function App() {
         className="h-160 w-full object-cover object-[center_70%]"
       />
       <BrandDefinition />
-      <div className=" bg-black text-linen px-18 py-25 text-3xl gap-6 flex items-center justify-center flex-col sm:flex-row ">
-        <div className="flex-col justify-center align-middle bg-black text-linen">
+      <div className=" bg-black text-white px-18 py-25 text-3xl gap-6 flex items-center justify-center flex-col sm:flex-row ">
+        <div className="flex-col justify-center align-middle bg-black text-white">
           <h1 className="font-bold mb-10 text-6xl ">Sobre a Soia</h1>
           <p className="text-2xl">
             Mais do que comunicar, buscamos entender o que move o consumo e
