@@ -1,0 +1,43 @@
+export function Services() {
+  return (
+    <section className="bg-white flex flex-col md:flex-row tracking-wide leading-9 text-2xl">
+      <div className="p-10">
+        <h1 className="font-bold mb-10 text-6xl max-w-xs">Nossos Serviços</h1>
+        <p>
+          A SOIA observa, analisa e transforma o comportamento humano em
+          narrativas e oportunidades.
+        </p>
+        <p>
+          Entre o sentir e o pensar, traduz o que move pessoas e o que inspira
+          gerações e dar forma as marcas que estão buscando o encontro emoção,
+          cultura e propósito.
+        </p>
+        <br />
+        <p>
+          Na area Sensorial, as ideas ganham texturas, voz e propósito, ou seja,
+          transformando conceitos em experiencias que despertam os sentidos.
+        </p>
+        <br />
+        <p>
+          Na área comportamental, tendências são traduzidas em estratégias
+          humanas, conectando marcas ao tempo presente e ao que ainda está por
+          vir.
+        </p>
+      </div>
+      <div>
+        <p className="px-10 md:px-0 md:pt-10">
+          Nos projetos de PR, cada ação é projetada com muita pesquisa, para que
+          o encontro entre marcas e públicos aconteça de forma genuína e
+          memorável.
+        </p>
+        <div className="w-full aspect-[1/1] mt-6">
+          <img
+            src="/shoes.jpeg"
+            alt="Soia Logo"
+            className="h-full w-full object-cover"
+          />
+        </div>
+      </div>
+    </section>
+  )
+}

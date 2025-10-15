@@ -1,6 +1,7 @@
 import { About } from '../components/About'
 import { BrandDefinition } from '../components/BrandDefinition'
 import Footer from '@/components/Footer'
+import { Services } from '../components/Services'
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/')({
@@ -17,36 +18,7 @@ function App() {
       />
       <BrandDefinition />
       <About />
-      <div className=" p-2 text-3xl text-ink my-8 gap-6 flex items-center justify-center flex-col sm:flex-row ">
-        <h2 className="font-bold mb-4">Nossos Serviços</h2>
-        <div>
-          <p>
-            A SOIA observa, analisa e transforma o comportamento humano em
-            narrativas e oportunidades.
-          </p>
-          <p>
-            Entre o sentir e o pensar, traduz o que move pessoas e o que inspira
-            gerações e dar forma as marcas que estão buscando o encontro emoção,
-            cultura e propósito.
-          </p>
-          <p>
-            Na area Sensorial, as ideas ganham texturas, voz e propósito, ou
-            seja, transformando conceitos em experiencias que despertam os
-            sentidos.
-          </p>
-          <p>
-            Na área comportamental, tendências são traduzidas em estratégias
-            humanas, conectando marcas ao tempo presente e ao que ainda está por
-            vir.
-          </p>
-          <p>
-            Nos projetos de PR, cada ação é projetada com muita pesquisa, para
-            que o encontro entre marcas e públicos aconteça de forma genuína e
-            memorável.
-          </p>
-        </div>
-        <img src="/shoes.jpeg" alt="Soia Logo" className="h-120" />
-      </div>
+      <Services />
       <div className=" p-2 text-3xl text-ink my-8 gap-6 flex items-center justify-center flex-col sm:flex-row ">
         <h2 className="font-bold mb-4">Conheça nossa fundadora</h2>
         <div>
