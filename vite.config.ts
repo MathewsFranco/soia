@@ -11,7 +11,10 @@ export default defineConfig({
     viteReact(),
     tailwindcss(),
   ],
-  base: '/soia/',
+  base: '/',
+  build: {
+    outDir: 'dist',
+  },
   test: {
     globals: true,
     environment: 'jsdom',
