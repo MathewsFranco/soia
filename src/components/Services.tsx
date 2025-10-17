@@ -33,7 +33,7 @@ export function Services() {
         <div className="w-full aspect-[1/1] mt-6">
           <img
             src="/shoes.jpeg"
-            alt="Soia Logo"
+            alt="black high heels on a office desk"
             className="h-full w-full object-cover"
           />
         </div>

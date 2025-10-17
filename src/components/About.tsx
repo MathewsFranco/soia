@@ -22,7 +22,7 @@ export function About() {
       <div className="aspect-[5/4] w-full md:w-1/2 flex items-center justify-center">
         <img
           src="/magazines.jpeg"
-          alt="Soia Logo"
+          alt="magazines hanging on a clothes hanger on a sidewalk"
           className="h-full w-full object-cover object-[center_25%]"
         />
       </div>

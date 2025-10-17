@@ -10,8 +10,8 @@ export function BrandDefinition() {
       </div>
       <div className="w-full md:w-3/6 flex items-center justify-center overflow-hidden">
         <img
-          src="/public/model.jpeg"
-          alt="Soia Logo"
+          src="/model.jpeg"
+          alt="model holding a computer"
           className="w-full h-full object-cover   object-[center_60%]"
         />
       </div>
