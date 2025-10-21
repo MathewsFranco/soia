@@ -1,6 +1,6 @@
 export function Founder() {
   return (
-    <div className="leading-relaxed text-2xl py-20 px-35 text-white bg-sage flex flex-col items-center justify-center gap-16">
+    <section className="leading-relaxed text-2xl py-20 px-35 text-white bg-sage flex flex-col items-center justify-center gap-16" id="founder">
       <h1 className="font-bold text-6xl mb-4 text-center">
         Conheça nossa fundadora
       </h1>
@@ -27,6 +27,6 @@ export function Founder() {
           duradouro.
         </p>
       </div>
-    </div>
+    </section>
   )
 }

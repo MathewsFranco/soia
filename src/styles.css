@@ -26,14 +26,16 @@ code {
 
 @theme {
   --color-*: initial;
-  --color-black: #000000;
-  --color-white: #ffffff;
-  --color-ink: #222022;
-  --color-parchment: #f2eecb;
-  --color-crimson: #6b282c;
-  --color-mushroom: #c8baac;
-  --color-linen: #f1f0ec;
-  --color-sage: #52513f;
-  --color-clay: #6b4331;
-  --color-amber: #b38331;
+  --color-black: #101820;
+  --color-white: #f2f2f0;
+  --color-parchment: #f2eeca;
+  --color-crimson: #551c25;
+  --color-tortilla: #c7b9ac;
+  --color-sage: #4e4934;
+  --color-clay: #623412;
+  --color-amber: #d29f13;
+}
+
+html {
+  scroll-behavior: smooth;
 }

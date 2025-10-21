@@ -1,6 +1,9 @@
 export function BrandDefinition() {
   return (
-    <div className=" flex flex-col md:flex-row bg-amber text-white h-160">
+    <section
+      className=" flex flex-col md:flex-row bg-amber text-white h-160"
+      id="brand-definition"
+    >
       <div className=" px-10  flex flex-col items-start justify-center text-left w-full h-160 md:w-4/6">
         <h1 className="font-bold mb-10 text-6xl ">QUEM SOMOS</h1>
         <p className="text-2xl">
@@ -15,6 +18,6 @@ export function BrandDefinition() {
           className="w-full h-full object-cover   object-[center_60%]"
         />
       </div>
-    </div>
+    </section>
   )
 }

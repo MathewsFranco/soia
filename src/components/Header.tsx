@@ -1,4 +1,4 @@
-import { Link } from '@tanstack/react-router'
+import { Menu } from 'lucide-react'
 import SideMenu from './SideMenu'
 import { useState } from 'react'
 
@@ -7,38 +7,41 @@ export default function Header() {
 
   return (
     <>
-      <header className="  py-8 pl-25 pr-15 flex items-center justify-between bg-ink text-white">
+      <header className="  py-8 pl-25 pr-15 flex items-center justify-between bg-black text-white">
         <div className="flex items-center">
           {/* TODO: update this to only show when mobile */}
-          {/* <button
+          <button
             onClick={() => setIsOpen(true)}
             className="p-2 hover:bg-gray-700 rounded-lg transition-colors"
             aria-label="Open menu"
           >
             <Menu size={24} />
-          </button> */}
+          </button>
           {/* TODO: update this to only show when mobile */}
 
-          <Link to="/">
+          <a href="/">
             <img src="/soia-logo-white.png" alt="Soia Logo" className="h-12" />
-          </Link>
+          </a>
         </div>
         <nav className="flex gap-12 text-lg font-bold ">
-          <Link to="/" className="hover:text-cyan-400 transition-colors ">
+          <a
+            href="#brand-definition"
+            className="hover:text-cyan-400 transition-colors "
+          >
             Home
-          </Link>
-          <Link to="/" className="hover:text-cyan-400 transition-colors">
+          </a>
+          <a href="#about" className="hover:text-cyan-400 transition-colors">
             Sobre
-          </Link>
-          <Link to="/" className="hover:text-cyan-400 transition-colors">
+          </a>
+          <a href="#services" className="hover:text-cyan-400 transition-colors">
             Serviços
-          </Link>
-          <Link to="/" className="hover:text-cyan-400 transition-colors">
+          </a>
+          {/* <a href="#" className="hover:text-cyan-400 transition-colors">
             Conteúdos
-          </Link>
-          <Link to="/" className="hover:text-cyan-400 transition-colors">
+          </a> */}
+          <a href="#founder" className="hover:text-cyan-400 transition-colors">
             Contatos
-          </Link>
+          </a>
         </nav>
       </header>
 

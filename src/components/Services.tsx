@@ -1,6 +1,9 @@
 export function Services() {
   return (
-    <section className="bg-white flex flex-col md:flex-row tracking-wide leading-9 text-2xl">
+    <section
+      className="bg-white text-black flex flex-col md:flex-row tracking-wide leading-9 text-2xl"
+      id="services"
+    >
       <div className="p-10">
         <h1 className="font-bold mb-10 text-6xl max-w-xs">Nossos Serviços</h1>
         <p>
