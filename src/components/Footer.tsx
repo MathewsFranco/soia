@@ -16,7 +16,7 @@ const Footer = () => {
       </a>
       <a
         href="mailto:soiaconnectcomercial@gmail.com"
-        className="text-2xl font-bold"
+        className="text-xl font-bold p-2"
       >
         soiaconnectcomercial@gmail.com
       </a>

@@ -1,6 +1,9 @@
 export function About() {
   return (
-    <section className="bg-black px-20 py-25 gap-15 flex flex-col md:flex-row tracking-wide leading-9 text-2xl" id="about">
+    <section
+      className="bg-black px-8 md:px-20 py-25 gap-15 flex flex-col md:flex-row tracking-wide leading-9 text-2xl "
+      id="about"
+    >
       <div className="relative flex flex-col justify-center bg-black text-white w-full md:w-1/2">
         <h1 className="font-bold mb-10 text-6xl max-w-xs">Sobre a SOIA</h1>
         <div className="px-6 py-3">
