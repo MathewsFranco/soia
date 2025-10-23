@@ -1,7 +1,7 @@
 export function Services() {
   return (
     <section
-      className="bg-white text-black flex flex-col md:flex-row tracking-wide leading-9 text-2xl"
+      className="text-justify bg-white text-black flex flex-col md:flex-row tracking-wide leading-relaxed text-2xl"
       id="services"
     >
       <div className="p-10">
@@ -17,8 +17,8 @@ export function Services() {
         </p>
         <br />
         <p>
-          Na area Sensorial, as ideas ganham texturas, voz e propósito, ou seja,
-          transformando conceitos em experiencias que despertam os sentidos.
+          Na área sensorial, as ideias ganham texturas, voz e propósito,
+          transformando conceitos em experiências que despertam os sentidos.
         </p>
         <br />
         <p>
@@ -28,7 +28,7 @@ export function Services() {
         </p>
       </div>
       <div>
-        <p className="px-10 md:px-0 md:pt-10">
+        <p className="px-10 md:pl-0 pr-10 md:pt-10">
           Nos projetos de PR, cada ação é projetada com muita pesquisa, para que
           o encontro entre marcas e públicos aconteça de forma genuína e
           memorável.
