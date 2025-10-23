@@ -51,7 +51,7 @@ const SideMenu = ({
           <a href="#services" onClick={closeMenu}>
             Serviços
           </a>
-          <a href="#founder" onClick={closeMenu}>
+          <a href="#footer" onClick={closeMenu}>
             Contatos
           </a>
         </nav>

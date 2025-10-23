@@ -15,7 +15,7 @@ export default function Header() {
           <a href="#brand-definition">Home</a>
           <a href="#about">Sobre</a>
           <a href="#services">Serviços</a>
-          <a href="#founder">Contatos</a>
+          <a href="#footer">Contatos</a>
         </nav>
         <button
           onClick={() => setIsOpen(true)}

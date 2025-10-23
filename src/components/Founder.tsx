@@ -12,9 +12,9 @@ export function Founder() {
         <div className="flex flex-col  items-center gap-10 ">
           <div className="w-80 h-80 rounded-full overflow-hidden shadow-xl relative">
             <img
-              src="/owner.jpeg"
-              alt="owner picture"
-              className="absolute inset-0 w-full h-full object-cover scale-160 translate-y-[27%] object-[295%_50%]"
+              src="/founder.jpeg"
+              alt="founder picture"
+              className="w-full h-full object-cover scale-110  object-[0%_-20%]"
             />
           </div>
           <p className="text-xl font-bold">FABIANA TOMAZ</p>
