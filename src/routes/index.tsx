@@ -2,7 +2,9 @@ import { About } from '../components/About'
 import { BrandDefinition } from '../components/BrandDefinition'
 import Footer from '@/components/Footer'
 import { Founder } from '../components/Founder'
+import { ImageSpacer } from '../components/ImageSpacer'
 import { Services } from '../components/Services'
+import { Slogan } from '../components/Slogan'
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/')({
@@ -12,11 +14,8 @@ export const Route = createFileRoute('/')({
 function App() {
   return (
     <>
-      <img
-        src="/keyboard.jpeg"
-        alt="Soia Banner"
-        className="h-160 w-full object-cover object-[center_70%]"
-      />
+      <Slogan />
+      <ImageSpacer />
       <BrandDefinition />
       <About />
       <Services />
