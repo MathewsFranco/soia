@@ -1,6 +1,11 @@
 export function Slogan() {
   return (
-    <div className="bg-amber p-15 pb-10 md:p-30 md:pb-20  text-white text-2xl md:text-4xl text-justify leading-relaxed [word-spacing:0.8rem] ">
+    <div className="bg-amber p-10 md:px-15 md:py-30 flex gap-8 items-center text-white text-2xl md:text-3xl text-justify leading-relaxed">
+      <img
+        src="/logomark-white.png"
+        className="w-30 h-30 md:w-50 md:h-50 md:ml-10"
+        alt="Descrição da imagem"
+      />
       <p>
         Mais do que comunicar, buscamos entender o que realmente move o consumo
         e transformamos essas percepções em posicionamentos sólidos, histórias
