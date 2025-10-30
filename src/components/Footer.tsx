@@ -1,7 +1,7 @@
-const Footer = () => {
+const Footer = ({ color = 'black' }: { color?: string }) => {
   return (
     <section
-      className="bg-black text-white flex flex-col items-center p-10 pb-15 gap-12"
+      className={`bg-${color} text-white flex flex-col items-center p-10 pb-15 gap-12`}
       id="footer"
     >
       <img src="/soia-logo-white.png" alt="soia-logo" className="w-100" />
