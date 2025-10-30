@@ -6,7 +6,7 @@ import SideMenu from './SideMenu'
 type NavLink = { href: string; label: string }
 
 const NAV_LINKS: NavLink[] = [
-  { href: '#brand-definition', label: 'Home' },
+  { href: '/', label: 'Home' },
   { href: '#about', label: 'Sobre' },
   { href: '#services', label: 'Serviços' },
   { href: '/about', label: 'Quem somos' },
@@ -28,6 +28,35 @@ export default function Header() {
     }
   }
 
+  function mapLinks() {
+    return NAV_LINKS.map((link) => {
+      const isHash = link.href.startsWith('#')
+      const to = isHash ? `/${link.href}` : link.href
+
+      function handleClick(e: React.MouseEvent<HTMLAnchorElement>) {
+        if (isHash && handleNavClick) {
+          handleNavClick(e, link.href)
+        }
+        setIsOpen(false)
+      }
+
+      // use a plain anchor for hash links so the event target is a real <a>
+      if (isHash) {
+        return (
+          <a key={link.href} href={link.href} onClick={handleClick}>
+            {link.label}
+          </a>
+        )
+      }
+
+      return (
+        <Link key={link.href} to={to} onClick={handleClick}>
+          {link.label}
+        </Link>
+      )
+    })
+  }
+
   return (
     <>
       <header className="py-8 pl-25 pr-15 flex items-center justify-between bg-black text-white">
@@ -36,19 +65,7 @@ export default function Header() {
         </Link>
 
         <nav className="hidden md:flex items-center justify-center gap-12 text-lg font-bold">
-          {NAV_LINKS.map((link) => {
-            const isHash = link.href.startsWith('#')
-            const to = isHash ? `/${link.href}` : link.href
-            return (
-              <Link
-                key={link.href}
-                to={to}
-                onClick={(e) => isHash && handleNavClick(e as any, link.href)}
-              >
-                {link.label}
-              </Link>
-            )
-          })}
+          {mapLinks()}
         </nav>
 
         <button
@@ -60,7 +77,7 @@ export default function Header() {
         </button>
       </header>
 
-      <SideMenu isOpen={isOpen} setIsOpen={setIsOpen} />
+      <SideMenu isOpen={isOpen} setIsOpen={setIsOpen} mapLinks={mapLinks} />
     </>
   )
 }

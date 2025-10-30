@@ -4,9 +4,11 @@ import { useEffect } from 'react'
 const SideMenu = ({
   isOpen,
   setIsOpen,
+  mapLinks,
 }: {
   isOpen: boolean
   setIsOpen: (open: boolean) => void
+  mapLinks: () => React.ReactNode
 }) => {
   const closeMenu = () => setIsOpen(false)
 
@@ -42,18 +44,7 @@ const SideMenu = ({
         </div>
 
         <nav className="flex-1 p-4 overflow-y-auto flex flex-col gap-6 text-lg font-bold">
-          <a href="#brand-definition" onClick={closeMenu}>
-            Home
-          </a>
-          <a href="#about" onClick={closeMenu}>
-            Sobre
-          </a>
-          <a href="#services" onClick={closeMenu}>
-            Serviços
-          </a>
-          <a href="#footer" onClick={closeMenu}>
-            Contatos
-          </a>
+          <nav className="flex flex-col gap-6 text-xl p-6">{mapLinks()}</nav>
         </nav>
       </aside>
     </>
