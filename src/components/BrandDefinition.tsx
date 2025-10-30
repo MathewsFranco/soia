@@ -4,8 +4,8 @@ export function BrandDefinition() {
       className="flex flex-col pt-10 md:pt-0 md:flex-row justify-center items-center bg-amber text-white "
       id="brand-definition"
     >
-      <div className="mx-5  flex flex-col gap-10 items-start justify-center md:w-4/6  ">
-        <h1 className="font-bold text-6xl ">QUEM SOMOS</h1>
+      <div className="mx-5  flex flex-col gap-5 items-start justify-center md:w-4/6  ">
+        <h1 className="font-cy-grotesk text-6xl ">QUEM SOMOS</h1>
         <p className="text-2xl text-justify">
           A SOIA é agência que conecta a sua marca as gerações que estão
           impulsionando o mercado.

@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <section
-      className="bg-black text-white flex flex-col items-center p-10 pb-25 gap-12"
+      className="bg-black text-white flex flex-col items-center p-10 pb-15 gap-12"
       id="footer"
     >
       <img src="/soia-logo-white.png" alt="soia-logo" className="w-100" />
@@ -19,7 +19,7 @@ const Footer = () => {
       </a>
       <a
         href="mailto:soiaconnectcomercial@gmail.com"
-        className="text-xl font-bold p-2"
+        className="text-3xl font-bold p-2"
       >
         soiaconnectcomercial@gmail.com
       </a>

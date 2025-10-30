@@ -4,12 +4,12 @@ export function Founder() {
       className=" leading-relaxed text-xl py-20 px-35 text-white bg-sage flex flex-col items-center justify-center gap-16"
       id="founder"
     >
-      <h1 className="font-bold text-7xl mb-4 text-center">
+      <h1 className="font-cy-grotesk text-8xl mb-4 text-center">
         Conheça nossa fundadora
       </h1>
 
-      <div className="flex flex-col lg:flex-row items-center gap-20 ">
-        <div className="flex flex-col  items-center gap-10 ">
+      <div className="flex flex-col lg:flex-row  gap-10 ">
+        <div className="flex flex-col  items-center gap-5 ">
           <div className="w-80 h-80 rounded-full overflow-hidden shadow-xl relative">
             <img
               src="/founder.jpeg"
@@ -20,7 +20,7 @@ export function Founder() {
           <p className="font-bold">FABIANA TOMAZ</p>
         </div>
 
-        <p className="max-w-xl  text-justify">
+        <p className="max-w-xl  mt-5 text-xl text-justify ">
           Fabiana Tomaz é estrategista criativa e fundadora da SOIA. Com uma
           trajetória marcada pela moda, branding e comportamento, transforma
           cultura e tendências em estratégias que conectam marcas a pessoas de
