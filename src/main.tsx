@@ -2,8 +2,8 @@ import './styles.css'
 
 import { RouterProvider, createRouter } from '@tanstack/react-router'
 
+import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/react'
-import { Analytics } from 'node_modules/@vercel/analytics/dist/vue/index'
 import { StrictMode } from 'react'
 import ReactDOM from 'react-dom/client'
 import reportWebVitals from './reportWebVitals.ts'
