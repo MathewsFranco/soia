@@ -2,9 +2,10 @@ import './styles.css'
 
 import { RouterProvider, createRouter } from '@tanstack/react-router'
 
+import { SpeedInsights } from '@vercel/speed-insights/react'
 import { Analytics } from 'node_modules/@vercel/analytics/dist/vue/index'
-import ReactDOM from 'react-dom/client'
 import { StrictMode } from 'react'
+import ReactDOM from 'react-dom/client'
 import reportWebVitals from './reportWebVitals.ts'
 // Import the generated route tree
 import { routeTree } from './routeTree.gen'
@@ -34,6 +35,7 @@ if (rootElement && !rootElement.innerHTML) {
     <StrictMode>
       <RouterProvider router={router} />
       <Analytics />
+      <SpeedInsights />
     </StrictMode>,
   )
 }
