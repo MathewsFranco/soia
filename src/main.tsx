@@ -1,12 +1,13 @@
-import { StrictMode } from 'react'
-import ReactDOM from 'react-dom/client'
+import './styles.css'
+
 import { RouterProvider, createRouter } from '@tanstack/react-router'
 
+import { Analytics } from 'node_modules/@vercel/analytics/dist/vue/index'
+import ReactDOM from 'react-dom/client'
+import { StrictMode } from 'react'
+import reportWebVitals from './reportWebVitals.ts'
 // Import the generated route tree
 import { routeTree } from './routeTree.gen'
-
-import './styles.css'
-import reportWebVitals from './reportWebVitals.ts'
 
 // Create a new router instance
 const router = createRouter({
@@ -32,6 +33,7 @@ if (rootElement && !rootElement.innerHTML) {
   root.render(
     <StrictMode>
       <RouterProvider router={router} />
+      <Analytics />
     </StrictMode>,
   )
 }
