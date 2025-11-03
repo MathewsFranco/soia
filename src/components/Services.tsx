@@ -5,7 +5,9 @@ export function Services() {
       id="services"
     >
       <div className="p-10">
-        <h1 className="font-cy-grotesk mb-20 text-6xl">Nossos Serviços</h1>
+        <h1 className="font-cy-grotesk mb-20 text-5xl md:text-6xl">
+          Nossos Serviços
+        </h1>
         <p>
           A SOIA observa, analisa e transforma o comportamento humano em
           narrativas e oportunidades.
