@@ -12,12 +12,12 @@ export function BrandDefinition() {
         </p>
       </div>
       <div className="max-w-100 my-15 md:w-2/6 md:mr-15 md:mb-15 relative ">
-        <Square className="absolute -top-8 -left-15" />
-        <Square className="absolute -bottom-10 -right-10 " />
+        <Square className="absolute md:-top-8 md:-left-15" />
+        <Square className="absolute bottom-0 right-0 md:-bottom-10 md:-right-10 " />
         <img
           src="/model.jpeg"
           alt="model holding a computer"
-          className="  object-cover"
+          className="object-cover p-10 md:p-0"
         />
       </div>
     </section>
