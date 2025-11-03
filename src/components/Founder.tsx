@@ -4,7 +4,7 @@ export function Founder() {
       className=" leading-relaxed text-xl py-20 px-35 text-white bg-sage flex flex-col items-center justify-center gap-16"
       id="founder"
     >
-      <h1 className="font-cy-grotesk text-8xl mb-4 text-center">
+      <h1 className="font-cy-grotesk text-5xl md:text-8xl mb-4 text-center">
         Conheça nossa fundadora
       </h1>
 
