@@ -18,10 +18,10 @@ const Footer = ({ color = 'black' }: { color?: string }) => {
         <p className="text-3xl">Follow us</p>
       </a>
       <a
-        href="mailto:soiaconnectcomercial@gmail.com"
+        href="mailto:comercial@soiaconnect.com.br"
         className="text-xl md:text-3xl font-bold"
       >
-        soiaconnectcomercial@gmail.com
+        comercial@soiaconnect.com.br
       </a>
     </section>
   )
