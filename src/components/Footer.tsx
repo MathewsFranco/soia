@@ -19,7 +19,7 @@ const Footer = ({ color = 'black' }: { color?: string }) => {
       </a>
       <a
         href="mailto:soiaconnectcomercial@gmail.com"
-        className=" text-xl md:text-3xl  font-bold p-2"
+        className="text-xl md:text-3xl font-bold"
       >
         soiaconnectcomercial@gmail.com
       </a>
