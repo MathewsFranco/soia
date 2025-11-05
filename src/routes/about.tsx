@@ -8,19 +8,35 @@ export const Route = createFileRoute('/about')({
 function RouteComponent() {
   return (
     <>
-      <div className="bg-clay text-white flex items-center gap-10 px-15 py-30 flex-col md:flex-row">
+      <div className="bg-clay text-white flex items-center gap-10 px-5 md:px-15 text-justify py-30 flex-col md:flex-row">
         <h1 className="font-cy-grotesk text-5xl  md:w-1/2 w-auto uppercase border-b-white border-b-3 text-center">
           quem somos
         </h1>
-        <p className="text-2xl leading-relaxed w-full md:w-1/2">
-          Na SOIA, mais do que comunicar, buscamos compreender o que move o
-          consumo e traduzir essas percepções em posicionamentos sólidos,
-          narrativas autênticas e experiências marcantes. Unimos estratégia,
-          estética e sensibilidade para criar e impulsionar marcas que inspiram,
-          conectam e permanecem.
-        </p>
+        <div className="text-2xl leading-relaxed w-full md:w-1/2">
+          <p>
+            Na SOIA, acreditamos que o posicionamento de uma marca vai além de
+            uma estratégia de mercado, é um processo contínuo de construção de
+            significado.
+          </p>
+          <p>
+            Cada marca carrega uma narrativa, um conjunto de valores e um papel
+            simbólico. Nosso trabalho é revelar essa essência, compreender como
+            ela se manifesta no presente e traduzi-la em linguagem, estética e
+            comportamento.
+          </p>
+          <p>
+            Acreditamos que marcas fortes são aquelas que sabem se reinventar
+            sem perder coerência, e que constroem lealdade não apenas pela
+            comunicação, mas pela experiência que entregam.
+          </p>
+          <p>
+            Na interseção entre estratégia e sensibilidade, ajudamos marcas a se
+            tornarem emocionalmente relevantes, culturalmente reconhecidas e
+            profundamente conectadas às pessoas que as escolhem.
+          </p>
+        </div>
       </div>
-      <div className=" flex gap-10 px-15 py-30 flex-col">
+      <div className=" flex gap-10 px-5 md:px-15 text-justify py-30 flex-col">
         <h1 className="font-cy-grotesk text-4xl md:text-5xl w-auto self-start border-b-black border-b-3 text-center uppercase">
           além da superfície
         </h1>

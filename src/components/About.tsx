@@ -11,14 +11,12 @@ export function About() {
           <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-white" />
           <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-white" />
           <p>
-            Mais do que comunicar, buscamos entender o que move o consumo e
-            traduzir essas percepções em posicionamentos sólidos, narrativas
-            potentes e experiências marcantes.
-          </p>
-          <p>
-            Nosso trabalho une análise sociocultural, branding, inovação e
-            storytelling para criar marcas que transcendem produtos e se tornam
-            parte da vida das pessoas.
+            Mais do que comunicar, queremos decifrar o que move o desejo e o
+            consumo. Compreender os símbolos, comportamentos e emoções que
+            definem o que as pessoas escolhem, usam e acreditam. Traduzimos
+            essas leituras em estratégias que unem razão e sensibilidade,
+            criando marcas que não apenas comunicam, mas expressam um tempo, um
+            estilo de vida e uma visão de mundo.
           </p>
         </div>
       </div>

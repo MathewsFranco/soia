@@ -5,10 +5,15 @@ export function BrandDefinition() {
       id="brand-definition"
     >
       <div className="mx-5  flex flex-col gap-5 items-start justify-center md:w-4/6  ">
-        <h1 className="font-cy-grotesk text-6xl ">QUEM SOMOS</h1>
+        <h1 className="font-cy-grotesk text-6xl uppercase">quem somos</h1>
         <p className="text-2xl text-justify">
-          A SOIA é agência que conecta a sua marca as gerações que estão
-          impulsionando o mercado.
+          A SOIA é uma agência de estratégias para marcas que buscam relevância
+          em um mercado em constante transformação. Conectamos marcas às
+          gerações que estão impulsionando as transformações do mercado, aquelas
+          que redefinem comportamentos, valores e modos de consumo. Fazemos isso
+          por meio de pesquisa de comportamento, análise de tendências e leitura
+          sociocultural, traduzindo movimentos culturais em estratégias que
+          constroem relevância, identificação e desejo.
         </p>
       </div>
       <div className="max-w-100 my-15 md:w-2/6 md:mr-15 md:mb-15 relative ">
