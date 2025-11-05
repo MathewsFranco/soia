@@ -21,7 +21,7 @@ function RouteComponent() {
         </p>
       </div>
       <div className=" flex gap-10 px-15 py-30 flex-col">
-        <h1 className="font-cy-grotesk text-5xl w-auto self-start border-b-black border-b-3 text-center uppercase">
+        <h1 className="font-cy-grotesk text-4xl md:text-5xl w-auto self-start border-b-black border-b-3 text-center uppercase">
           além da superfície
         </h1>
         <p className="text-2xl leading-relaxed md:ml-55">
