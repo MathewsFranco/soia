@@ -44,6 +44,8 @@ code {
   --color-sage: #4e4934;
   --color-clay: #623412;
   --color-amber: #d29f13;
+  --color-error: #8b2635;
+  --color-success: #5d6b2f;
   --font-glacial: 'Glacial Indifference', system-ui;
   --font-cy-grotesk: 'cy Grotesk Grand', system-ui;
 }
