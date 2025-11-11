@@ -1,6 +1,6 @@
 export const WEB3_FORMS_CONFIG = {
   endpoint: 'https://api.web3forms.com/submit',
-  accessKey: 'b86eb91d-b984-4c15-bbfb-522372cb6069',
+  accessKey: 'caaa507b-ee9a-424b-9668-db52a6fa73be',
 }
 
 export const MESSAGES = {
