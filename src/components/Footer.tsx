@@ -1,3 +1,5 @@
+import ContactForm from './ContactForm/ContactForm'
+
 const Footer = ({ color = 'black' }: { color?: string }) => {
   return (
     <section
@@ -9,6 +11,7 @@ const Footer = ({ color = 'black' }: { color?: string }) => {
         href="https://www.instagram.com/soiaconnect/"
         target="_blank"
         className="flex items-center gap-4 "
+        rel="noopener"
       >
         <img
           src="/instagram-logo.png"
@@ -23,6 +26,7 @@ const Footer = ({ color = 'black' }: { color?: string }) => {
       >
         comercial@soiaconnect.com.br
       </a>
+      <ContactForm />
     </section>
   )
 }
