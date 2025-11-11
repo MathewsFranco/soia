@@ -9,7 +9,7 @@ import { FormField } from './FormField'
 import { TextAreaField } from './TextAreaField'
 import { SubmitButton } from './SubmitButton'
 import { ResultMessage } from './ResultMessage'
-import { PLACEHOLDERS, LABELS } from './utils/constants'
+import { LABELS, PLACEHOLDERS } from './utils/constants'
 
 export default function ContactForm() {
   const { submitResult, isSubmitting, submitForm } = useContactForm()

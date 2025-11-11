@@ -49,7 +49,7 @@ export function FormField({
       />
       {hasErrors && (
         <div className="text-error text-sm font-medium mt-1">
-          {field.state.meta.errors.map((error, index) => (
+          {field.state.meta.errors.map((error: string, index: number) => (
             <p key={index}>{error}</p>
           ))}
         </div>
