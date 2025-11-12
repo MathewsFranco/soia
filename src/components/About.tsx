@@ -1,7 +1,7 @@
 export function About() {
   return (
     <section
-      className=" bg-black pb-15 pr-15 px-8 pt-5 md:px-15 md:py-15 gap-5 flex flex-col md:flex-row tracking-wide leading-relaxed text-xl text-white "
+      className=" bg-black pb-15 pr-15 px-8 pt-5 md:px-15 md:py-15 gap-5 flex flex-col md:flex-row text-xl text-white "
       id="about"
     >
       <div className="flex flex-col gap-10 justify-center bg-black md:w-1/2">

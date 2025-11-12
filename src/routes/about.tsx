@@ -12,7 +12,7 @@ function RouteComponent() {
         <h1 className="font-cy-grotesk text-5xl  md:w-1/2 w-auto uppercase border-b-white border-b-3 text-center">
           quem somos
         </h1>
-        <div className="text-2xl leading-relaxed w-full md:w-1/2">
+        <div className="text-2xl w-full md:w-1/2">
           <p>
             Na SOIA, acreditamos que o posicionamento de uma marca vai além de
             uma estratégia de mercado, é um processo contínuo de construção de
@@ -40,7 +40,7 @@ function RouteComponent() {
         <h1 className="font-cy-grotesk text-4xl md:text-5xl w-auto self-start border-b-black border-b-3 text-center uppercase">
           além da superfície
         </h1>
-        <p className="text-2xl leading-relaxed md:ml-55">
+        <p className="text-2xl md:ml-55">
           Fabiana Tomaz é estrategista criativa e fundadora da SOIA, busca
           construir sua trajetória entre a moda, o branding e o comportamento de
           consumo. Na SOIA, cada projeto vai além de uma simples entrega: é uma

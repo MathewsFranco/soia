@@ -35,7 +35,7 @@ export function TextAreaField({
     <div className="space-y-2">
       <label
         htmlFor={field.name}
-        className="block text-lg font-semibold text-white font-glacial tracking-wide"
+        className="block text-lg font-semibold text-white font-glacial"
       >
         {label}
       </label>

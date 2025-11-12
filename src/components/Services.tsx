@@ -1,7 +1,7 @@
 export function Services() {
   return (
     <section
-      className="text-justify bg-white text-black flex flex-col md:flex-row tracking-wide leading-relaxed text-2xl"
+      className="text-justify bg-white text-black flex flex-col md:flex-row text-2xl"
       id="services"
     >
       <div className="p-10">

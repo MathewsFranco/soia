@@ -1,7 +1,7 @@
 export function Founder() {
   return (
     <section
-      className=" leading-relaxed text-xl py-20 px-35 text-white bg-sage flex flex-col items-center justify-center gap-16"
+      className="text-xl py-20 px-35 text-white bg-sage flex flex-col items-center justify-center gap-16"
       id="founder"
     >
       <h1 className="font-cy-grotesk text-3xl md:text-5xl mb-4 ">
