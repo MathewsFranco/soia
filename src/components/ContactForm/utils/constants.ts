@@ -16,9 +16,9 @@ export const PLACEHOLDERS = {
 }
 
 export const LABELS = {
-  name: 'Name',
+  name: 'Nome',
   email: 'Email',
-  message: 'Message',
+  message: 'Mensagem',
   submit: 'Enviar',
   sending: 'Enviando...',
 }
