@@ -10,9 +10,9 @@ export const MESSAGES = {
 }
 
 export const PLACEHOLDERS = {
-  name: 'Enter your name...',
-  email: 'Enter your email...',
-  message: 'Enter your message...',
+  name: 'Digite seu nome',
+  email: 'Digite seu email',
+  message: 'Digite sua mensagem',
 }
 
 export const LABELS = {

@@ -18,6 +18,7 @@ export function TextAreaField({
     py-3
     font-glacial
     border-2
+    border-transparent
     text-lg
     bg-white
     text-black
