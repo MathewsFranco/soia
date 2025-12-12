@@ -1,10 +1,10 @@
-import Footer from '@/components/Footer'
 import { createFileRoute } from '@tanstack/react-router'
 import { About } from '../components/About'
 import { BrandDefinition } from '../components/BrandDefinition'
 import { Founder } from '../components/Founder'
 import { Services } from '../components/Services'
 import { Slogan } from '../components/Slogan'
+import Footer from '@/components/Footer'
 
 export const Route = createFileRoute('/')({
   component: App,

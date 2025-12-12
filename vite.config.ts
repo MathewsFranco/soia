@@ -1,6 +1,6 @@
+import { resolve } from 'node:path'
 import { TanStackRouterVite } from '@tanstack/router-plugin/vite'
 import { defineConfig } from 'vitest/config'
-import { resolve } from 'node:path'
 import tailwindcss from '@tailwindcss/vite'
 import viteReact from '@vitejs/plugin-react'
 

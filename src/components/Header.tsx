@@ -1,11 +1,12 @@
 import { Link } from '@tanstack/react-router'
 import { Menu } from 'lucide-react'
-import { useState, type MouseEvent } from 'react'
+import { useState } from 'react'
 import SideMenu from './SideMenu'
+import type { MouseEvent } from 'react'
 
 type NavLink = { href: string; label: string }
 
-const NAV_LINKS: NavLink[] = [
+const NAV_LINKS: Array<NavLink> = [
   { href: '/', label: 'Home' },
   { href: '#about', label: 'Sobre' },
   { href: '#services', label: 'Serviços' },
@@ -34,7 +35,7 @@ export default function Header() {
       const to = isHash ? `/${link.href}` : link.href
 
       function handleClick(e: React.MouseEvent<HTMLAnchorElement>) {
-        if (isHash && handleNavClick) {
+        if (isHash) {
           handleNavClick(e, link.href)
         }
         setIsOpen(false)
