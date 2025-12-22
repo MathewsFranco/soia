@@ -21,18 +21,14 @@ code {
 
 @theme {
   --color-*: initial;
-  --color-black: #101820;
-  --color-white: #f2f2f0;
-  --color-parchment: #f2eeca;
-  --color-crimson: #551c25;
-  --color-tortilla: #c7b9ac;
-  --color-sage: #4e4934;
-  --color-clay: #623412;
-  --color-amber: #d29f13;
+  --color-black: #101920;
+  --color-white: #ffffff;
+  --color-crimson: #551c23;
+  --color-sage: #504a34;
   --color-error: #8b2635;
   --color-success: #5d6b2f;
   --font-inter: "Inter", system-ui;
-  --font-extenda: "Extenda 40", system-ui;
+  --font-syne: "Syne", system-ui;
 }
 
 html {
