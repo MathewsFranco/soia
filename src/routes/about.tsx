@@ -9,7 +9,7 @@ function RouteComponent() {
   return (
     <>
       <div className="bg-clay text-white flex items-center gap-10 px-5 md:px-15 text-justify py-30 flex-col md:flex-row">
-        <h1 className="font-cy-grotesk text-4xl md:w-1/2 w-auto uppercase border-b-white border-b-3 text-center">
+        <h1 className="font-extenda text-4xl md:w-1/2 w-auto uppercase border-b-white border-b-3 text-center">
           quem somos
         </h1>
         <div className="text-2xl w-full md:w-1/2">
@@ -37,7 +37,7 @@ function RouteComponent() {
         </div>
       </div>
       <div className=" flex gap-10 px-5 md:px-15 text-justify py-30 flex-col">
-        <h1 className="font-cy-grotesk text-2xl md:text-5xl w-auto self-start border-b-black border-b-3 text-center uppercase">
+        <h1 className="font-extenda text-2xl md:text-5xl w-auto self-start border-b-black border-b-3 text-center uppercase">
           além da superfície
         </h1>
         <p className="text-2xl md:ml-55">

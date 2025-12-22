@@ -7,7 +7,7 @@ interface SubmitButtonProps {
 
 export function SubmitButton({ disabled, isSubmitting }: SubmitButtonProps) {
   const baseClasses = `
-    font-glacial
+    font-inter
     font-bold
     py-4
     px-8

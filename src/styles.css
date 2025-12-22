@@ -7,24 +7,8 @@ body {
 }
 
 @font-face {
-  font-family: 'Glacial Indifference';
-  src: url('/fonts/GlacialIndifference-Regular.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Glacial Indifference';
-  src: url('/fonts/GlacialIndifference-Bold.otf') format('opentype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'cy Grotesk Grand';
-  src: url('/fonts/Cy-Grotesk-Grand.otf') format('opentype');
+  font-family: "Extenda 40";
+  src: url("/fonts/Extenda-40-Hecto.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -47,8 +31,8 @@ code {
   --color-amber: #d29f13;
   --color-error: #8b2635;
   --color-success: #5d6b2f;
-  --font-glacial: 'Glacial Indifference', system-ui;
-  --font-cy-grotesk: 'cy Grotesk Grand', system-ui;
+  --font-inter: "Inter", system-ui;
+  --font-extenda: "Extenda 40", system-ui;
 }
 
 html {
@@ -59,6 +43,6 @@ html {
 
   html,
   body {
-    font-family: var(--font-glacial);
+    font-family: var(--font-inter);
   }
 }

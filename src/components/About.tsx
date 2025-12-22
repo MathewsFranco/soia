@@ -5,7 +5,7 @@ export function About() {
       id="about"
     >
       <div className="flex flex-col gap-10 justify-center bg-black md:w-1/2">
-        <h1 className="font-cy-grotesk text-5xl ">Sobre a SOIA</h1>
+        <h1 className="font-extenda text-5xl ">Sobre a SOIA</h1>
         <div className="px-6 py-3 text-justify relative">
           {/* Decorative borders */}
           <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-white" />

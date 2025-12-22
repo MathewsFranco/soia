@@ -16,7 +16,7 @@ export function FormField({
     w-full
     px-4
     py-3
-    font-glacial
+    font-inter
     border-2
     border-transparent
     text-lg
@@ -34,7 +34,7 @@ export function FormField({
     <div className="space-y-2">
       <label
         htmlFor={field.name}
-        className="block text-lg font-semibold text-white font-glacial"
+        className="block text-lg font-semibold text-white font-inter"
       >
         {label}
       </label>
