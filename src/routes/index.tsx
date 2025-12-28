@@ -13,15 +13,17 @@ export const Route = createFileRoute('/')({
 
 function App() {
   return (
-    <>
+    <div className="app-wrapper">
+      <div className="conexao-container">
+        <h1 className="conexao-text">Conexão</h1>
+      </div>
       <AnimatedGradientBg />
-      {/* Your content sits above */}
       {/* <Slogan />
       <BrandDefinition />
       <About />
       <Services />
       <Founder />
       <Footer />*/}
-    </>
+    </div>
   )
 }
