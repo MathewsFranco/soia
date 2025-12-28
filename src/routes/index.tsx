@@ -5,6 +5,7 @@ import { Founder } from '../components/Founder'
 import { Services } from '../components/Services'
 import { Slogan } from '../components/Slogan'
 import Footer from '@/components/Footer'
+import AnimatedGradientBg from '@/components/background/AnimatedGradientBg'
 
 export const Route = createFileRoute('/')({
   component: App,
@@ -13,12 +14,14 @@ export const Route = createFileRoute('/')({
 function App() {
   return (
     <>
-      <Slogan />
+      <AnimatedGradientBg />
+      {/* Your content sits above */}
+      {/* <Slogan />
       <BrandDefinition />
       <About />
       <Services />
       <Founder />
-      <Footer />
+      <Footer />*/}
     </>
   )
 }
