@@ -1,10 +1,4 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { About } from '../components/About'
-import { BrandDefinition } from '../components/BrandDefinition'
-import { Founder } from '../components/Founder'
-import { Services } from '../components/Services'
-import { Slogan } from '../components/Slogan'
-import Footer from '@/components/Footer'
 import AnimatedGradientBg from '@/components/background/AnimatedGradientBg'
 
 export const Route = createFileRoute('/')({
@@ -14,9 +8,6 @@ export const Route = createFileRoute('/')({
 function App() {
   return (
     <div className="app-wrapper">
-      <div className="conexao-container">
-        <h1 className="conexao-text">Conexão</h1>
-      </div>
       <AnimatedGradientBg />
       {/* <Slogan />
       <BrandDefinition />

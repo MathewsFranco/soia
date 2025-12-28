@@ -4,18 +4,20 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   hyphens: auto;
+  cursor: none;
 }
 
 @font-face {
-  font-family: "Extenda 40";
-  src: url("/fonts/Extenda-40-Hecto.ttf") format("truetype");
+  font-family: 'Extenda 40';
+  src: url('/fonts/Extenda-40-Hecto.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-family:
+    source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 @theme {
@@ -26,8 +28,8 @@ code {
   --color-sage: #504a34;
   --color-error: #8b2635;
   --color-success: #5d6b2f;
-  --font-inter: "Inter", system-ui;
-  --font-syne: "Syne", system-ui;
+  --font-inter: 'Inter', system-ui;
+  --font-syne: 'Syne', system-ui;
 }
 
 html {
@@ -43,12 +45,7 @@ html {
 }
 
 :root {
-  --color-bg1: #101920;
-  --color1: 80, 74, 52;
-  --color2: 85, 28, 35;
-  --color-interactive: 255, 255, 255;
-  --circle-size: 60%;
-  --blending: hard-light;
+  --circle-size: 66%;
 }
 
 @keyframes moveInCircle {
@@ -101,7 +98,7 @@ html {
   background: transparent;
   top: 0;
   left: 0;
-  mix-blend-mode: difference;
+  z-index: 1;
 
   svg {
     position: fixed;
@@ -118,7 +115,6 @@ html {
     will-change: transform;
     transform: translateZ(0);
     backface-visibility: hidden;
-    image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
   }
 
@@ -130,23 +126,19 @@ html {
   .interactive {
     position: absolute;
     background: radial-gradient(circle at center,
-        rgba(var(--color-interactive), 1) 0%,
-        rgba(var(--color-interactive), 1) 50%,
-        rgba(var(--color-interactive), 0) 50%) no-repeat;
+        var(--color-white) 0%,
+        var(--color-white) 50%,
+        transparent 50%) no-repeat;
     mix-blend-mode: var(--blending);
   }
 
-  .g1,
-  .g2,
-  .g3,
-  .g4 {
+
+
+  .g1 {
     width: var(--circle-size);
     height: var(--circle-size);
     top: calc(50% - var(--circle-size) / 2);
     left: calc(50% - var(--circle-size) / 2);
-  }
-
-  .g1 {
     animation: moveVertical 30s ease infinite;
   }
 
@@ -190,6 +182,20 @@ html {
     top: -10%;
     left: -10%;
   }
+
+  .conexao-text-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    z-index: 10;
+    mix-blend-mode: difference;
+  }
 }
 
 .app-wrapper {
@@ -197,7 +203,7 @@ html {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background: var(--color-bg1);
+  background: var(--color-black);
 }
 
 .conexao-container {
@@ -210,13 +216,14 @@ html {
   align-items: center;
   justify-content: center;
   pointer-events: none;
+  z-index: 2;
 }
 
 .conexao-text {
-  font-size: clamp(8rem, 20vw, 20rem);
+  font-size: clamp(3rem, 10vw, 10rem);
   font-family: var(--font-syne);
   font-weight: 800;
-  color: #ffffff;
+  color: var(--color-white);
   margin: 0;
   user-select: none;
   line-height: 1;

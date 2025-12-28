@@ -1,48 +1,59 @@
-import { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
+import { useEffect, useRef } from 'react'
+import { gsap } from 'gsap'
 
 export default function AnimatedGradientBg() {
-  const interactiveRef = useRef<HTMLDivElement>(null);
-  const mousePosition = useRef({ x: 0, y: 0 });
-  const currentPosition = useRef({ x: 0, y: 0 });
-  const animationRef = useRef<number>(0);
+  const interactiveRef = useRef<HTMLDivElement>(null)
+  const mousePosition = useRef({ x: 0, y: 0 })
+  const currentPosition = useRef({ x: 0, y: 0 })
+  const animationRef = useRef<number>(0)
 
   useEffect(() => {
-    const interactive = interactiveRef.current;
-    if (!interactive) return;
+    const interactive = interactiveRef.current
+    if (!interactive) return
 
     const handleMouseMove = (event: MouseEvent) => {
-      mousePosition.current = { x: event.clientX, y: event.clientY };
-    };
+      mousePosition.current = { x: event.clientX, y: event.clientY }
+    }
 
     const animate = () => {
-      currentPosition.current.x += (mousePosition.current.x - currentPosition.current.x) * 0.15;
-      currentPosition.current.y += (mousePosition.current.y - currentPosition.current.y) * 0.15;
+      currentPosition.current.x +=
+        (mousePosition.current.x - currentPosition.current.x) * 0.15
+      currentPosition.current.y +=
+        (mousePosition.current.y - currentPosition.current.y) * 0.15
 
       gsap.set(interactive, {
         x: Math.round(currentPosition.current.x),
         y: Math.round(currentPosition.current.y),
-      });
+      })
 
-      animationRef.current = requestAnimationFrame(animate);
-    };
+      animationRef.current = requestAnimationFrame(animate)
+    }
 
-    window.addEventListener('mousemove', handleMouseMove);
-    animationRef.current = requestAnimationFrame(animate);
+    window.addEventListener('mousemove', handleMouseMove)
+    animationRef.current = requestAnimationFrame(animate)
 
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      cancelAnimationFrame(animationRef.current);
-    };
-  }, []);
+      window.removeEventListener('mousemove', handleMouseMove)
+      cancelAnimationFrame(animationRef.current)
+    }
+  }, [])
 
   return (
     <div className="gradient-bg">
       <svg xmlns="http://www.w3.org/2000/svg" style={{ position: 'absolute' }}>
         <defs>
           <filter id="goo" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="35" result="blur" />
-            <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 45 -18" result="goo" />
+            <feGaussianBlur
+              in="SourceGraphic"
+              stdDeviation="35"
+              result="blur"
+            />
+            <feColorMatrix
+              in="blur"
+              type="matrix"
+              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 45 -18"
+              result="goo"
+            />
             <feBlend in="SourceGraphic" in2="goo" />
           </filter>
         </defs>
@@ -55,6 +66,9 @@ export default function AnimatedGradientBg() {
         <div className="g5" />
         <div ref={interactiveRef} className="interactive" />
       </div>
+      <div className="conexao-text-overlay">
+        <h1 className="conexao-text">Conexão</h1>
+      </div>
     </div>
-  );
+  )
 }
