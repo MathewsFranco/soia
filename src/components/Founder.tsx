@@ -21,8 +21,13 @@ export function Founder() {
         </div>
 
         <p className="max-w-xl text-2xl text-justify ">
-          Fabiana Tomaz é estrategista criativa, formada em Moda e fundadora da SOIA.
-          Com uma trajetória construída entre moda, branding e comportamento, transforma cultura e tendências em estratégias que conectam marcas e pessoas de forma genuína e relevante. Sua visão combina sensibilidade estética, pensamento estratégico e inovação para criar experiências que transcendem o óbvio e constroem valor simbólico, emocional e duradouro.
+          Fabiana Tomaz é estrategista criativa, formada em Moda e fundadora da
+          SOIA. Com uma trajetória construída entre moda, branding e
+          comportamento, transforma cultura e tendências em estratégias que
+          conectam marcas e pessoas de forma genuína e relevante. Sua visão
+          combina sensibilidade estética, pensamento estratégico e inovação para
+          criar experiências que transcendem o óbvio e constroem valor
+          simbólico, emocional e duradouro.
         </p>
       </div>
     </section>

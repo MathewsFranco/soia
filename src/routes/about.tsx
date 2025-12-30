@@ -41,7 +41,14 @@ function RouteComponent() {
           além da superfície
         </h1>
         <p className="text-2xl md:ml-55">
-          Fabiana Tomaz é estrategista criativa e fundadora da SOIA. Formada em Moda, ela constrói sua trajetória unindo a moda, o branding e o comportamento de consumo. Na SOIA, cada projeto vai além de uma simples entrega: é uma verdadeira experiência de criação. Mergulhamos no universo da marca, estudamos tendências, analisamos comportamentos e entendemos o que realmente motiva e emociona as pessoas. A partir disso, desenvolvemos narrativas e soluções que dão vida à marca, fortalecendo sua presença e relevância no mercado.
+          Fabiana Tomaz é estrategista criativa e fundadora da SOIA. Formada em
+          Moda, ela constrói sua trajetória unindo a moda, o branding e o
+          comportamento de consumo. Na SOIA, cada projeto vai além de uma
+          simples entrega: é uma verdadeira experiência de criação. Mergulhamos
+          no universo da marca, estudamos tendências, analisamos comportamentos
+          e entendemos o que realmente motiva e emociona as pessoas. A partir
+          disso, desenvolvemos narrativas e soluções que dão vida à marca,
+          fortalecendo sua presença e relevância no mercado.
         </p>
       </div>
       <Footer color="sage" />
