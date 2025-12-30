@@ -40,7 +40,13 @@ export default function AnimatedGradientBg() {
 
   return (
     <div className="gradient-bg">
-      <svg xmlns="http://www.w3.org/2000/svg" style={{ position: 'absolute' }}>
+      {/* SVG filter definitions */}
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="filter-defs"
+        style={{ position: 'absolute' }}
+        aria-hidden="true"
+      >
         <defs>
           <filter id="goo" x="-50%" y="-50%" width="200%" height="200%">
             <feGaussianBlur
@@ -58,6 +64,7 @@ export default function AnimatedGradientBg() {
           </filter>
         </defs>
       </svg>
+
       <div className="gradients-container">
         <div className="g1" />
         <div className="g2" />
@@ -66,8 +73,16 @@ export default function AnimatedGradientBg() {
         <div className="g5" />
         <div ref={interactiveRef} className="interactive" />
       </div>
+
       <div className="conexao-text-overlay">
-        <h1 className="conexao-text">Conexão</h1>
+        {/* Embedded inline SVG logo (use JSX-friendly attributes) */}
+        <img
+          src="/logo-test.svg"
+          alt="SOIA Logo"
+          className="conexao-logo"
+          width="800"
+          height="300"
+        />
       </div>
     </div>
   )
