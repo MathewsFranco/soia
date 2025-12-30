@@ -47,6 +47,13 @@ html {
 
 :root {
   --circle-size: 66%;
+  --circle-size-mobile: 90%;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --circle-size: var(--circle-size-mobile);
+  }
 }
 
 .gradient-bg {
@@ -59,7 +66,7 @@ html {
   left: 0;
   z-index: 1;
 
-  svg {
+  svg.filter-defs {
     position: fixed;
     top: 0;
     left: 0;
@@ -67,75 +74,70 @@ html {
     height: 0;
   }
 
-  .gradients-container {
-    filter: url(#goo);
+  svg.blobs-container {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
+    filter: url(#goo);
     will-change: transform;
-    transform: translateZ(0);
-    backface-visibility: hidden;
-    image-rendering: crisp-edges;
   }
 
-  .g1,
-  .g2,
-  .g3,
-  .g4,
-  .g5,
-  .interactive {
-    position: absolute;
-    background: radial-gradient(
-        circle at center,
-        var(--color-white) 0%,
-        var(--color-white) 50%,
-        transparent 50%
-      )
-      no-repeat;
+  .blob {
+    fill: var(--color-white);
     mix-blend-mode: var(--blending);
   }
 
   .g1 {
-    width: var(--circle-size);
-    height: var(--circle-size);
-    top: calc(50% - var(--circle-size) / 2);
-    left: calc(50% - var(--circle-size) / 2);
+    transform-origin: 50% 50%;
   }
 
   .g2 {
-    width: calc(var(--circle-size) * 0.6);
-    height: calc(var(--circle-size) * 0.6);
-    transform-origin: calc(50% - 400px);
+    transform-origin: calc(50% - 40px) 50%;
   }
 
   .g3 {
-    width: calc(var(--circle-size) * 1.11);
-    height: calc(var(--circle-size) * 1.11);
-    top: calc(50% - var(--circle-size) / 2 + 200px);
-    left: calc(50% - var(--circle-size) / 2 - 500px);
-    transform-origin: calc(50% + 400px);
+    transform-origin: calc(50% + 40px) 70%;
   }
 
   .g4 {
-    width: calc(var(--circle-size) * 1.3);
-    height: calc(var(--circle-size) * 1.3);
-    top: calc(50% - var(--circle-size) / 2);
-    left: calc(50% - var(--circle-size) / 2);
-    transform-origin: calc(50% - 200px);
+    transform-origin: 50% 50%;
   }
 
   .g5 {
-    width: calc(var(--circle-size) * 1.5);
-    height: calc(var(--circle-size) * 1.5);
-    top: calc(50% - var(--circle-size));
-    left: calc(50% - var(--circle-size));
-    transform-origin: calc(50% - 800px) calc(50% + 200px);
+    transform-origin: calc(50% - 40px) calc(50% + 20px);
   }
 
-  .interactive {
-    width: 20%;
-    height: 20%;
-    top: -10%;
-    left: -10%;
+  @media (max-width: 768px) {
+    svg.blobs-container {
+      overflow: visible;
+    }
+
+    .g1 {
+      r: 30;
+    }
+
+    .g2 {
+      r: 18;
+      transform-origin: 50% 50%;
+    }
+
+    .g3 {
+      r: 32;
+      cx: 15;
+      cy: 65;
+    }
+
+    .g4 {
+      r: 38;
+    }
+
+    .g5 {
+      r: 40;
+      cx: 15;
+      cy: 15;
+    }
   }
 
   .conexao-text-overlay {
