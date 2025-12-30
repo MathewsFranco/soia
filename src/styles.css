@@ -5,7 +5,6 @@ body {
   padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  hyphens: auto;
   cursor: none;
 }
 
@@ -15,11 +14,6 @@ body {
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-}
-
-code {
-  font-family:
-    source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 @theme {
@@ -39,20 +33,10 @@ html {
 }
 
 @layer base {
+
   html,
   body {
     font-family: var(--font-inter);
-  }
-}
-
-:root {
-  --circle-size: 66%;
-  --circle-size-mobile: 90%;
-}
-
-@media (max-width: 768px) {
-  :root {
-    --circle-size: var(--circle-size-mobile);
   }
 }
 
@@ -113,31 +97,6 @@ html {
     svg.blobs-container {
       overflow: visible;
     }
-
-    .g1 {
-      r: 30;
-    }
-
-    .g2 {
-      r: 18;
-      transform-origin: 50% 50%;
-    }
-
-    .g3 {
-      r: 32;
-      cx: 15;
-      cy: 65;
-    }
-
-    .g4 {
-      r: 38;
-    }
-
-    .g5 {
-      r: 40;
-      cx: 15;
-      cy: 15;
-    }
   }
 
   .conexao-text-overlay {
@@ -146,7 +105,7 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-    mix-blend-mode: difference;
+    mix-blend-mode: exclusion;
     z-index: 10;
   }
 }

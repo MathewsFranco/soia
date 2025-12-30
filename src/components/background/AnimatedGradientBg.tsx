@@ -34,7 +34,6 @@ export default function AnimatedGradientBg() {
         duration: 22,
         ease: 'power1.inOut',
         repeat: -1,
-        yoyo: false,
       })
 
       gsap.to(g3Ref.current, {
@@ -128,11 +127,11 @@ export default function AnimatedGradientBg() {
         aria-label="Animated blob background"
       >
         <title>Animated blob background</title>
-        <circle ref={g1Ref} className="blob g1" cx="50" cy="50" r="33" />
-        <circle ref={g2Ref} className="blob g2" cx="50" cy="50" r="20" />
-        <circle ref={g3Ref} className="blob g3" cx="10" cy="70" r="37" />
-        <circle ref={g4Ref} className="blob g4" cx="50" cy="50" r="43" />
-        <circle ref={g5Ref} className="blob g5" cx="10" cy="10" r="50" />
+        <circle ref={g1Ref} className="blob" cx="50" cy="50" r="40" />
+        <circle ref={g2Ref} className="blob" cx="50" cy="50" r="40" />
+        <circle ref={g3Ref} className="blob" cx="10" cy="70" r="40" />
+        <circle ref={g4Ref} className="blob" cx="50" cy="50" r="40" />
+        <circle ref={g5Ref} className="blob" cx="10" cy="10" r="40" />
         <circle
           ref={interactiveRef}
           className="blob interactive hidden md:block"
