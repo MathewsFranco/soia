@@ -22,8 +22,8 @@ export default function AnimatedGradientBg() {
       }
 
       gsap.to(g1Ref.current, {
-        attr: { cy: '90%' },
-        duration: 25,
+        attr: { cy: '190%' },
+        duration: 15,
         ease: 'sine.inOut',
         repeat: -1,
         yoyo: true,
@@ -44,8 +44,8 @@ export default function AnimatedGradientBg() {
       })
 
       gsap.to(g4Ref.current, {
-        attr: { cx: '80%', cy: '58%' },
-        duration: 28,
+        attr: { cx: '180%', cy: '58%' },
+        duration: 12,
         ease: 'power2.inOut',
         repeat: -1,
         yoyo: true,
@@ -53,7 +53,7 @@ export default function AnimatedGradientBg() {
 
       gsap.to(g5Ref.current, {
         attr: { cx: '75%', cy: '75%' },
-        duration: 20,
+        duration: 17,
         ease: 'sine.inOut',
         repeat: -1,
         yoyo: true,
