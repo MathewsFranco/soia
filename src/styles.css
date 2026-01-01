@@ -33,7 +33,6 @@ html {
 }
 
 @layer base {
-
   html,
   body {
     font-family: var(--font-inter);
@@ -43,12 +42,13 @@ html {
 .gradient-bg {
   width: 100vw;
   height: 100vh;
-  position: absolute;
+  position: fixed;
   overflow: hidden;
   background: transparent;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 0;
+  pointer-events: none;
 
   svg.filter-defs {
     position: fixed;
@@ -113,8 +113,6 @@ html {
 .app-wrapper {
   position: relative;
   width: 100vw;
-  height: 100vh;
-  overflow: hidden;
   background: var(--color-black);
 }
 

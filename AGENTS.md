@@ -147,3 +147,4 @@ export const Route = createFileRoute('/')({ component: App })
 - Small, focused components
 - Separate: types, constants, validators, utils
 - Never commit secrets
+- Do NOT run `npm run build` after every change - builds will be handled in separate phase
