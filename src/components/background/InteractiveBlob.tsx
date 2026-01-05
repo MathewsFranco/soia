@@ -1,4 +1,4 @@
-import { forwardRef, useEffect, useRef } from 'react'
+import { forwardRef, useEffect } from 'react'
 import { gsap } from 'gsap'
 import { INTERACTIVE_BLOB_CONFIG } from './utils/animation-constants'
 
@@ -8,18 +8,17 @@ interface InteractiveBlobProps {
 
 const InteractiveBlob = forwardRef<SVGCircleElement, InteractiveBlobProps>(
   ({ isMouseFollowEnabled }, ref) => {
-    const internalRef = useRef<SVGCircleElement>(null)
-    const circleRef = (ref as React.RefObject<SVGCircleElement>) || internalRef
+    const circleRef = (ref as React.RefObject<SVGCircleElement>)
 
     useEffect(() => {
       // Only enable mouse follow for larger screens and if the prop allows it
-      if (!isMouseFollowEnabled || !window.matchMedia('(min-width: 768px)').matches || !circleRef.current) {
+      if (!isMouseFollowEnabled || !window.matchMedia('(min-width: 768px)').matches) {
         return
       }
 
       const mouseMoveHandler = (e: MouseEvent) => {
-        const svg = circleRef.current?.closest('svg')
-        if (!svg || !circleRef.current) return
+        const svg = circleRef.current.closest('svg')
+        if (!svg) return
 
         const point = svg.createSVGPoint()
         point.x = e.clientX
