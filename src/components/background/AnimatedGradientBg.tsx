@@ -5,8 +5,8 @@ import LogoOverlay from './LogoOverlay'
 export default function AnimatedGradientBg() {
   return (
     <>
-      {/* <BlobFilter />
-      <BlobsContainer />*/}
+      <BlobFilter />
+      <BlobsContainer />
       <LogoOverlay />
     </>
   )

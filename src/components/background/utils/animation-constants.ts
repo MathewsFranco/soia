@@ -44,13 +44,6 @@ export const BLOB_CONFIGS: ReadonlyArray<BlobConfig> = [
     r: 10,
     className: 'blob g4',
   },
-  {
-    id: 'g5',
-    cx: 110,
-    cy: 15,
-    r: 10,
-    className: 'blob g5',
-  },
 ] as const
 
 export const INTERACTIVE_BLOB_CONFIG = {

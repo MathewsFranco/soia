@@ -2,7 +2,7 @@ export default function BlobFilter() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="filter-defs"
+      className="w-0 h-0 border-2 border-crimson"
       aria-hidden="true"
     >
       <defs>

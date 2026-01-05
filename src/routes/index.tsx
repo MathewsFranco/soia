@@ -13,7 +13,7 @@ export const Route = createFileRoute('/')({
 
 function App() {
   return (
-    <div className="bg">
+    <>
       <AnimatedGradientBg />
 
       {/* <Slogan />
@@ -22,6 +22,6 @@ function App() {
       <Services />
       <Founder />
       <Footer />*/}
-    </div>
+    </>
   )
 }
