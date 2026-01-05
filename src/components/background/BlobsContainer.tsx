@@ -11,10 +11,9 @@ export default function BlobsContainer() {
         aria-label="Animated blob background"
       >
         <title>Animated blob background</title>
-        <Blob config={{ ...BLOB_CONFIGS[0], }} />
-        <Blob config={{ ...BLOB_CONFIGS[1], }} />
-        <Blob config={{ ...BLOB_CONFIGS[2], }} />
-        <Blob config={{ ...BLOB_CONFIGS[3], }} />
+        {BLOB_CONFIGS.map((config, index) => (
+          <Blob key={index} config={config} />
+        ))}
         <InteractiveBlob />
       </svg>
     </div>
