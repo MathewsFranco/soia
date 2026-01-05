@@ -1,24 +1,26 @@
-import { gsap } from 'gsap'
-import { useGSAP } from '@gsap/react'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useRef } from 'react'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useGSAP } from '@gsap/react'
 
 export default function LogoOverlay() {
-  const containerRef = useRef<HTMLDivElement>(null)
+  const logoRef = useRef<HTMLImageElement>(null)
 
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger)
 
-    gsap.set(containerRef.current, {
-      y: '50vh',
+    gsap.set(logoRef.current, {
+      top: '50%',
+      left: '50%',
+      xPercent: -50,
       yPercent: -50,
-      transformOrigin: 'center top',
+      transformOrigin: '50% 0%'
     })
 
-    gsap.to(containerRef.current, {
-      scale: 0.15,
-      y: '1.5rem',
-      yPercent: 0,
+    gsap.to(logoRef.current, {
+      scale: 0.2,
+      top: '1.5rem',
+      yPercent: 0, // Removes centering offset
       scrollTrigger: {
         trigger: document.documentElement,
         start: 'top top',
@@ -26,18 +28,14 @@ export default function LogoOverlay() {
         scrub: true,
       },
     })
-  }, { scope: containerRef })
+  }, { scope: logoRef })
 
   return (
-    <div
-      ref={containerRef}
-      className="logo-container fixed top-0 left-0 w-full flex justify-center pointer-events-none"
-    >
-      <img
-        src="/logo-test.svg"
-        alt="SOIA Logo"
-        className="pointer-events-auto max-w-[80vw] h-auto"
-      />
-    </div>
+    <img
+      ref={logoRef}
+      src="/logo-test.svg"
+      alt="SOIA Logo"
+      className="fixed"
+    />
   )
 }
