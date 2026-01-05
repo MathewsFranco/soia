@@ -1,12 +1,3 @@
-export interface BlobAnimationConfig {
-  attr?: { cx?: string; cy?: string }
-  rotation?: number
-  duration: number
-  ease: string
-  repeat: number
-  yoyo?: boolean
-}
-
 export interface BlobConfig {
   id: string
   cx: number
@@ -51,9 +42,4 @@ export const INTERACTIVE_BLOB_CONFIG = {
   cy: -10,
   r: 10,
   className: 'blob interactive hidden md:block',
-} as const
-
-export const LOGO_SIZE = {
-  full: { width: 1000, height: 375 },
-  fixed: { width: 200, height: 75 },
 } as const

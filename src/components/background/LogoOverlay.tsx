@@ -9,12 +9,16 @@ export default function LogoOverlay() {
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger)
 
-    const scale = 0.15
-    const yPercent = -50 * (1 - scale)
+    gsap.set(containerRef.current, {
+      y: '50vh',
+      yPercent: -50,
+      transformOrigin: 'center top',
+    })
 
     gsap.to(containerRef.current, {
-      scale,
-      yPercent,
+      scale: 0.15,
+      y: '1.5rem',
+      yPercent: 0,
       scrollTrigger: {
         trigger: document.documentElement,
         start: 'top top',
@@ -27,12 +31,12 @@ export default function LogoOverlay() {
   return (
     <div
       ref={containerRef}
-      className="logo-container fixed top-0 left-0 w-full h-full flex items-center justify-center pointer-events-none"
+      className="logo-container fixed top-0 left-0 w-full flex justify-center pointer-events-none"
     >
       <img
         src="/logo-test.svg"
         alt="SOIA Logo"
-        className="pointer-events-auto max-w-[80vw]"
+        className="pointer-events-auto max-w-[80vw] h-auto"
       />
     </div>
   )
