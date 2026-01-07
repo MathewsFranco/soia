@@ -4,7 +4,7 @@ import LogoOverlay from './LogoOverlay'
 
 export default function AnimatedGradientBg() {
   return (
-    <section className='h-[100vh]'>
+    <section className='h-[100vh] flex justify-center items-center'>
       <BlobFilter />
       <BlobsContainer />
       <LogoOverlay />

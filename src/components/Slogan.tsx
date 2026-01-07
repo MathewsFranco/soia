@@ -1,6 +1,6 @@
 export function Slogan() {
   return (
-    <div className="bg-sage p-4 md:px-15 md:py-30 flex gap-8 items-center">
+    <div className="bg-sage h-[100vh] p-4 md:px-15 md:py-30 flex gap-8 items-center">
       <img
         src="/logomark-white.png"
         className="w-25 h-25 md:w-50 md:h-50 md:ml-10"
