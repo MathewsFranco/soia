@@ -6,7 +6,7 @@ const Footer = ({ color = 'black' }: { color?: string }) => {
       className={`bg-${color} text-white flex flex-col items-center p-10 pb-15 gap-12`}
       id="footer"
     >
-      <img src="/soia-logo-white.png" alt="soia-logo" className="w-100" />
+      {/* <img src="/soia-logo-white.png" alt="soia-logo" className="w-100" />*/}
       <a
         href="https://www.instagram.com/soiaconnect/"
         target="_blank"

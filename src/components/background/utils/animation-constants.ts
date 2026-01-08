@@ -11,14 +11,14 @@ export const BLOB_CONFIGS: ReadonlyArray<BlobConfig> = [
     id: 'g1',
     cx: '20%',
     cy: '30%',
-    r: '12%',
+    r: '32%',
     className: 'fill-white ',
   },
   {
     id: 'g2',
     cx: '80%',
     cy: '40%',
-    r: '15%',
+    r: '25%',
     className: 'fill-white ',
   },
   {
@@ -32,7 +32,7 @@ export const BLOB_CONFIGS: ReadonlyArray<BlobConfig> = [
     id: 'g4',
     cx: '70%',
     cy: '80%',
-    r: '10%',
+    r: '30%',
     className: 'fill-white ',
   },
 ] as const
@@ -40,6 +40,6 @@ export const BLOB_CONFIGS: ReadonlyArray<BlobConfig> = [
 export const INTERACTIVE_BLOB_CONFIG = {
   cx: '-10%',
   cy: '-10%',
-  r: '12%',
+  r: '5%',
   className: 'fill-white  hidden md:block',
 } as const

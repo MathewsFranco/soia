@@ -10,6 +10,10 @@ export default function LogoOverlay() {
   //   () => {
   //     gsap.registerPlugin(ScrollTrigger)
 
+  //     gsap.set(logoRef.current, {
+  //       transformOrigin: '50% 50%',
+  //     })
+
   //     gsap.to(logoRef.current, {
   //       top: '2rem',
   //       yPercent: -50,
@@ -30,7 +34,7 @@ export default function LogoOverlay() {
       ref={logoRef}
       src="/logo-test.svg"
       alt="SOIA Logo"
-      className='big-logo'
+      className="big-logo mix-blend-difference"
     />
   )
 }

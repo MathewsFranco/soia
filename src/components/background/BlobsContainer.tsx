@@ -18,26 +18,26 @@ export default function BlobsContainer() {
       gsap.registerPlugin(ScrollTrigger)
 
       // Timeline 1: Wandering
-      const wanderTl = gsap.timeline({
-        repeat: -1,
-        yoyo: true,
-        defaults: { ease: 'sine.inOut' },
-      })
+      // const wanderTl = gsap.timeline({
+      //   repeat: -1,
+      //   yoyo: true,
+      //   defaults: { ease: 'sine.inOut' },
+      // })
 
-      blobRefs.current.forEach((el, i) => {
-        if (!el) return
-        wanderTl.to(
-          el,
-          {
-            attr: {
-              cx: () => gsap.utils.random(10, 90),
-              cy: () => gsap.utils.random(10, 90),
-            },
-            duration: gsap.utils.random(5, 8),
-          },
-          i * 0.15,
-        )
-      })
+      // blobRefs.current.forEach((el, i) => {
+      //   if (!el) return
+      //   wanderTl.to(
+      //     el,
+      //     {
+      //       attr: {
+      //         cx: () => gsap.utils.random(-100, 250),
+      //         cy: () => gsap.utils.random(-100, 150),
+      //       },
+      //       duration: gsap.utils.random(5, 8),
+      //     },
+      //     i * 0.15,
+      //   )
+      // })
 
       // Timeline 2: Scroll-driven
       const scrollTl = gsap.timeline({ paused: true })
@@ -58,39 +58,40 @@ export default function BlobsContainer() {
       const trigger = ScrollTrigger.create({
         trigger: '.hero-section',
         start: 'top top',
-        end: '+=400',
+        end: '+=600',
         scrub: true,
-        onEnter() {
-          wanderTl.pause()
-        },
+        markers: true,
+        // onEnter() {
+        //   wanderTl.pause()
+        // },
         onLeave() {
           scrollTl.progress(1)
         },
         onEnterBack() {
           scrollTl.progress(0)
-          wanderTl.resume()
+          // wanderTl.resume()
         },
         onUpdate(self) {
           scrollTl.progress(self.progress)
-          if (self.progress > 0.01 && !wanderTl.paused()) {
-            wanderTl.pause()
-          } else if (self.progress < 0.01 && wanderTl.paused()) {
-            wanderTl.resume()
-          }
+          // if (self.progress > 0.01 && !wanderTl.paused()) {
+          //   wanderTl.pause()
+          // } else if (self.progress < 0.01 && wanderTl.paused()) {
+          //   wanderTl.resume()
+          // }
         },
       })
 
       return () => {
-        trigger.kill()
-        wanderTl.kill()
-        scrollTl.kill()
+        // trigger.kill()
+        // wanderTl.kill()
+        // scrollTl.kill()
       }
     },
     { scope: animatedRef },
   )
 
   return (
-    <div className="fixed top-0 left-0 w-full h-full pointer-events-none">
+    <div className="fixed top-0 left-0 w-[100vw] h-[100vh] pointer-events-none">
       <svg
         ref={animatedRef}
         className="blobs-container"

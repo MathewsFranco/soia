@@ -5,6 +5,9 @@ import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import AnimatedGradientBg from '@/components/background/AnimatedGradientBg'
 import { Slogan } from '@/components/Slogan'
+import { About } from '@/components/About';
+import { Services } from '@/components/Services';
+import Footer from '@/components/Footer';
 
 export const Route = createFileRoute('/')({
   component: App,
@@ -15,26 +18,24 @@ function App() {
 
   useGSAP(
     () => {
-      const smoother = ScrollSmoother.create({
+      ScrollSmoother.create({
         smooth: 1,
         effects: true, // look for data-speed and data-lag attributes on elements and animate accordingly
       });
-      ScrollTrigger.create({
-        trigger: '.big-logo',
-        pin: true,
-        start: 'center top',
-        end: '+=3000000',
-      });
 
-      gsap.to(
-        '.big-logo',
-        {
-          scale: 0.2,
-          scrollTrigger: {
-            scrub: true,
-          }
-        }
-      )
+      // gsap.to(
+      //   '.big-logo',
+      //   {
+      //     scale: 0.2,
+      //     scrollTrigger: {
+      //       trigger: '.big-logo',
+      //       scrub: true,
+      //       pin: true,
+      //       start: 'top top',
+      //       end: 'max',
+      //     }
+      //   }
+      // )
     },
   );
 
@@ -43,12 +44,13 @@ function App() {
       <div id="smooth-content">
         <AnimatedGradientBg />
         <Slogan />
+        <About />
+        <Services />
+        <Footer />
         {/*
       <BrandDefinition />
-      <About />
-      <Services />
       <Founder />
-      <Footer />*/}
+      */}
       </div>
     </>
   )

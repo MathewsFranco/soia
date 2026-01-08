@@ -6,7 +6,7 @@ export default function AnimatedGradientBg() {
   return (
     <section className="hero-section h-[100vh] flex justify-center items-center">
       <BlobFilter />
-      {/* <BlobsContainer />*/}
+      <BlobsContainer />
       <LogoOverlay />
     </section>
   )

@@ -1,16 +1,24 @@
+import Typography from "./Typography";
+
 export function Slogan() {
   return (
-    <div className="bg-sage h-[100vh] p-4 md:px-15 md:py-30 flex gap-8 items-center">
+    <section className=" h-[100vh] flex-col md:flex-row flex items-center justify-center gap-10">
       <img
         src="/logomark-white.png"
         className="w-25 h-25 md:w-50 md:h-50 md:ml-10"
-        alt="Descrição da imagem"
+        alt="logomark"
       />
-      <p className="text-white text-xl md:text-3xl text-justify ">
-        Mais do que comunicar, buscamos entender o que realmente move o consumo
-        e transformamos essas percepções em posicionamentos sólidos, histórias
-        autênticas e experiências memoráveis.
-      </p>
-    </div>
+      <div className="max-w-[600px]">
+        <Typography variant="body" >
+          Mais do que comunicar, buscamos entender o que realmente move as
+          pessoas, seus desejos e comportamento de consumo.
+          <br />
+          <br />
+          A partir
+          dessas percepções, desenvolvemos posicionamentos e narrativas
+          estratégicas para cada marca e cliente.
+        </Typography>
+      </div>
+    </section>
   )
 }
