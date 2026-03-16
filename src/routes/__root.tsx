@@ -4,8 +4,6 @@ import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollSmoother } from 'gsap/ScrollSmoother'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import Nav from '../components/Nav'
-
 gsap.registerPlugin(ScrollSmoother, ScrollTrigger)
 
 export const Route = createRootRoute({
@@ -47,7 +45,6 @@ function Root() {
       <meta property="og:image" content="/og-image.png" />
       <meta name="twitter:card" content="summary_large_image" />
 
-      <Nav />
       <div id="smooth-wrapper" style={{ overflow: 'hidden' }}>
         <div id="smooth-content">
           <Outlet />

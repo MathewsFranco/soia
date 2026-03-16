@@ -44,14 +44,14 @@ export default function Hero() {
     <section
       ref={heroRef}
       id="hero"
-      className="relative min-h-screen flex flex-col justify-end pb-16 px-6 md:px-16 pt-16 overflow-hidden"
+      className="relative min-h-screen flex flex-col justify-end pb-16 px-6 md:px-16 pt-6 overflow-hidden"
     >
       {/* Large logomark watermark */}
       <img
         src="/logomark-white.png"
         alt=""
         aria-hidden="true"
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] max-w-[640px] opacity-[0.04] pointer-events-none select-none"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] max-w-[640px] opacity-[0.07] pointer-events-none select-none"
         data-speed="0.6"
       />
 
