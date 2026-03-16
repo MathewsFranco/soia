@@ -6,7 +6,7 @@
 - `npm run build` - Build and typecheck production bundle
 - `npm run serve` - Preview production build
 - `npm run test` - Run all tests with Vitest
-- `npm run test <pattern>` - Run tests matching file pattern (eg. `npm run test ContactForm`)
+- `vitest run <pattern>` - Run tests matching file pattern (eg. `vitest run ContactForm`)
 - `npm run lint` - Run ESLint
 - `npm run format` - Run Prettier
 - `npm run check` - Format and lint all files
@@ -59,6 +59,7 @@ const Square = ({ className }: { className?: string }) => (
 - Use @tanstack/react-form
 - Validate on change, return `undefined` for valid, string error for invalid
 - Keep validators in `utils/validators.ts`
+- Use Zod for schema validation when complex validation is needed
 
 ```tsx
 export const validateEmail = ({ value }: { value: string }) => {
@@ -119,7 +120,6 @@ export const Route = createFileRoute('/')({ component: App })
 - Define custom colors in `@theme` block (styles.css)
 - Semantic colors: crimson, sage, success, error
 - `md:` breakpoints for responsive
-- Custom fonts from public/fonts/
 
 ### Performance
 
@@ -137,8 +137,14 @@ export const Route = createFileRoute('/')({ component: App })
 
 ### Testing
 
-- Vitest with jsdom environment
-- Write tests alongside components or in test files
+- Vitest with jsdom environment (configured in vite.config.ts)
+- Run with `vitest run` for all tests, `vitest run <pattern>` for specific files
+- Note: No tests currently exist in this codebase
+
+### Deployment
+
+- GitHub Pages deployment configured (homepage in package.json)
+- Build outputs to `dist/` directory
 
 ### General Rules
 
@@ -146,5 +152,7 @@ export const Route = createFileRoute('/')({ component: App })
 - No unused locals/parameters
 - Small, focused components
 - Separate: types, constants, validators, utils
-- Never commit secrets
+- Never commit secrets (WARNING: Web3Forms access key is exposed in constants.ts - do NOT add more secrets)
 - Do NOT run `npm run build` after every change - builds will be handled in separate phase
+- Custom fonts loaded from public/fonts/ (Extenda-40-Hecto.ttf)
+- Tailwind v4 with custom colors defined in @theme block (crimson, sage, success, error)

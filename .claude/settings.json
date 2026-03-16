@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Bash",
+      "Write",
+      "Edit",
+      "WebFetch"
+    ],
+    "deny": [
+      "Bash(cat .env*)",
+      "Bash(echo $*)",
+      "Edit(.env*)",
+      "Read(.env*)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo \"$FILE\" | grep -q \"\\.md$\" && npx markdownlint-cli2 \"$FILE\" 2>/dev/null || true"
+          }
+        ],
+        "matcher": "Edit|Write"
+      }
+    ]
+  }
+}

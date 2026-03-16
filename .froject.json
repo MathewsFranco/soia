@@ -1,0 +1,89 @@
+{
+  "version": "1.0.0",
+  "generator": "the-froject",
+  "generatedAt": "2026-03-16T00:00:00.000Z",
+  "hatched": true,
+  "frog": {
+    "id": "ember",
+    "name": "Rödis",
+    "description": "Ate a chili pepper once. Never recovered.",
+    "tagline": "Spicy but lovable",
+    "palette": {
+      "primary": "#f87171",
+      "secondary": "#fbbf24",
+      "accent": "#fb923c"
+    }
+  },
+  "project": {
+    "name": "Soia",
+    "description": "SOIA website — React 19 frontend for a brand and marketing agency focused on culture, behavior, and branding.",
+    "type": "frontend",
+    "languages": ["TypeScript", "TSX", "CSS"],
+    "tools": [
+      "GitHub Issues",
+      "GitHub"
+    ],
+    "role": "Mathews",
+    "mcpIntegrations": [
+      {
+        "name": "GitHub Issues",
+        "mcpStatus": "official",
+        "mcpInstall": "docker run -i --rm -e GITHUB_PERSONAL_ACCESS_TOKEN ghcr.io/github/github-mcp-server",
+        "isTaskManager": true,
+        "contextType": "tasks",
+        "contextTargets": [
+          "roadmap.md"
+        ]
+      },
+      {
+        "name": "GitHub",
+        "mcpStatus": "official",
+        "mcpInstall": "docker run -i --rm -e GITHUB_PERSONAL_ACCESS_TOKEN ghcr.io/github/github-mcp-server",
+        "isTaskManager": false,
+        "contextType": "code",
+        "contextTargets": [
+          "conventions.md",
+          "architecture.md"
+        ]
+      }
+    ]
+  },
+  "generatedFiles": [
+    "GETTING-STARTED.md",
+    "CLAUDE.md",
+    "CLAUDE.local.md",
+    ".gitignore",
+    ".claudeignore",
+    ".froject.json",
+    "context/roadmap.md",
+    "plans/website-redesign.md",
+    "plans/website-development.md",
+    "reference/",
+    ".claude/commands/prime.md",
+    ".claude/commands/create-plan.md",
+    ".claude/commands/implement.md",
+    ".claude/commands/work.md",
+    ".claude/commands/hatch.md",
+    ".claude/commands/close.md",
+    ".claude/commands/review.md",
+    ".claude/commands/draft.md",
+    ".claude/commands/research.md",
+    ".claude/skills/code-reviewer/SKILL.md",
+    ".claude/skills/documentation-writer/SKILL.md",
+    ".claude/skills/project-manager/SKILL.md",
+    ".claude/skills/frontend-designer/SKILL.md",
+    ".claude/skills/accessibility-auditor/SKILL.md",
+    ".claude/skills/user-researcher/SKILL.md",
+    ".claude/skills/page-cro/SKILL.md",
+    ".claude/skills/skill-creator/SKILL.md",
+    ".claude/rules/code-style.md",
+    ".claude/rules/brand-voice.md",
+    ".claude/rules/context-management.md",
+    ".claude/rules/documentation.md",
+    ".claude/agents/code-reviewer.md",
+    ".claude/agents/content-editor.md",
+    ".claude/agents/design-auditor.md",
+    ".claude/agents/api-designer.md",
+    ".claude/settings.json"
+  ]
+}

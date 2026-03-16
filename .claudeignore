@@ -1,0 +1,17 @@
+# Files and directories Claude should ignore
+# One pattern per line, same syntax as .gitignore
+
+node_modules/
+dist/
+build/
+.next/
+__pycache__/
+coverage/
+*.lock
+*.min.js
+*.min.css
+.env
+.env.*
+.git/
+.tanstack/
+routeTree.gen.ts
