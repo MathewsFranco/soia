@@ -27,13 +27,24 @@ export default function Hero() {
       if (line1) wrapClip(line1)
       if (line2) wrapClip(line2)
 
-      const tl = gsap.timeline({ delay: 0.4 })
-      tl.from(['.hero-line1', '.hero-line2'], {
-        yPercent: 105,
-        duration: 0.9,
-        stagger: 0.1,
-        ease: 'power3.out',
+      const tl = gsap.timeline()
+
+      tl.to('.hero-logo', {
+        opacity: 0.25,
+        duration: 1.2,
+        ease: 'power2.inOut',
       })
+        .to('.hero-logo', {
+          opacity: 0.07,
+          duration: 1,
+          ease: 'power2.inOut',
+        }, '+=0.6')
+        .from(['.hero-line1', '.hero-line2'], {
+          yPercent: 105,
+          duration: 0.9,
+          stagger: 0.1,
+          ease: 'power3.out',
+        }, '<')
         .from('.hero-body', { opacity: 0, y: 12, duration: 0.8, ease: 'power2.out' }, '-=0.4')
         .from('.hero-scroll-cue', { opacity: 0, duration: 0.6 }, '-=0.3')
     },
@@ -51,7 +62,7 @@ export default function Hero() {
         src="/logomark-white.png"
         alt=""
         aria-hidden="true"
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] max-w-[640px] opacity-[0.07] pointer-events-none select-none"
+        className="hero-logo absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] max-w-[640px] opacity-0 pointer-events-none select-none"
         data-speed="0.6"
       />
 
