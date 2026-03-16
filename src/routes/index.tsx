@@ -84,43 +84,23 @@ function HomePage() {
       scrollTrigger: { trigger: '.about-heading', start: 'top 70%' },
     })
 
-    // Services — horizontal scroll pin on desktop
-    const servicesTrack = document.querySelector<HTMLElement>('.services-track')
-    if (window.innerWidth >= 768 && servicesTrack) {
-      gsap.to(servicesTrack, {
-        x: () => -(servicesTrack.scrollWidth - window.innerWidth + 160),
-        ease: 'none',
-        scrollTrigger: {
-          trigger: '.services-section',
-          start: 'top top',
-          end: () => `+=${servicesTrack.scrollWidth}`,
-          pin: true,
-          scrub: 1,
-          anticipatePin: 1,
-        },
-      })
-    } else {
-      // Mobile: stagger fade-up
-      gsap.from('.service-card', {
-        y: 20,
-        opacity: 0,
-        stagger: 0.12,
-        duration: 0.7,
-        ease: 'power2.out',
-        scrollTrigger: { trigger: '#services', start: 'top 85%' },
-      })
-    }
+    // Services — stagger fade-in
+    gsap.from('.service-card', {
+      y: 20,
+      opacity: 0,
+      stagger: 0.12,
+      duration: 0.7,
+      ease: 'power2.out',
+      scrollTrigger: { trigger: '#services', start: 'top 85%' },
+    })
 
-    // Marquee — scrubbed horizontal movement
-    gsap.to('.marquee-track', {
-      xPercent: -50,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: '.marquee-section',
-        start: 'top bottom',
-        end: 'bottom top',
-        scrub: 1,
-      },
+    // Brand quote — fade up
+    gsap.from('.marquee-quote', {
+      y: 20,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'power2.out',
+      scrollTrigger: { trigger: '.marquee-section', start: 'top 80%' },
     })
 
     // Founder — accent line expands from left
