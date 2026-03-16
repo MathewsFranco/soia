@@ -2,6 +2,7 @@ import { Link } from '@tanstack/react-router'
 import { Menu } from 'lucide-react'
 import { useState } from 'react'
 import SideMenu from './SideMenu'
+import { LogoMorphSVG } from './LogoMorphSVG'
 import type { MouseEvent } from 'react'
 
 type NavLink = { href: string; label: string }
@@ -60,21 +61,21 @@ export default function Header() {
 
   return (
     <>
-      <header className="py-8 pl-25 pr-15 flex items-center justify-between bg-black text-white">
+      <header className="py-6 px-10 md:px-16 flex items-center justify-between bg-black text-white border-b border-white/5">
         <Link to="/">
-          <img src="/soia-logo-white.png" alt="Soia Logo" className="h-12" />
+          <LogoMorphSVG className="h-8 w-auto" />
         </Link>
 
-        <nav className="hidden md:flex items-center justify-center gap-12 text-lg font-bold">
+        <nav className="hidden md:flex items-center gap-10 font-poppins font-light text-xs tracking-[0.2em] text-white/60 uppercase">
           {mapLinks()}
         </nav>
 
         <button
           onClick={() => setIsOpen(true)}
-          className="p-2 hover:bg-gray-700 rounded-lg transition-colors md:hidden"
+          className="p-2 md:hidden text-white/60 hover:text-white transition-colors"
           aria-label="Open menu"
         >
-          <Menu size={24} />
+          <Menu size={20} />
         </button>
       </header>
 

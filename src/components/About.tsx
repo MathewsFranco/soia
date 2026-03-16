@@ -1,20 +1,49 @@
-import Typography from "./Typography";
+import SectionLabel from './ui/SectionLabel'
 
 export function About() {
   return (
     <section
-      className=" h-[100vh] flex p-10"
+      className="about-section relative min-h-screen flex items-center px-6 md:px-16 py-24 overflow-hidden"
       id="about"
     >
-      <div className="flex flex-col justify-center gap-10">
-        <Typography variant="title">Sobre a SOIA</Typography>
-        <Typography variant="body">
-          Idealizada por Fabiana Tomaz, com formação em Moda e atuação em marketing e comportamento de consumo, a SOIA nasce como um agência de comunicação boutique e com estratégia de 360º, conectando marcas, clientes e influenciadores de forma assertiva e relevante.
-          <br />
-          <br />
-          Atuamos em múltiplas frentes como, posicionamento, narrativas, influência, conteúdo, relações públicas, eventos e experiências. Sempre a partir de uma leitura profunda do que move as pessoas e o consumo contemporâneo nos universos de moda e lifestyle.
-        </Typography>
+      {/* Large background word — parallaxes slower than foreground */}
+      <span
+        className="absolute right-[-2vw] top-1/2 -translate-y-1/2 font-roswell leading-none select-none pointer-events-none"
+        style={{
+          fontSize: 'clamp(8rem, 22vw, 22rem)',
+          color: 'rgba(93, 42, 45, 0.05)',
+        }}
+        aria-hidden="true"
+        data-speed="0.75"
+      >
+        SOIA
+      </span>
+
+      <div className="relative z-10 max-w-[720px]">
+        <SectionLabel className="about-label block mb-6">Agência Boutique</SectionLabel>
+
+        <h2 className="about-heading font-roswell text-4xl md:text-6xl text-white leading-tight tracking-wide mb-10">
+          Sobre a SOIA
+        </h2>
+
+        <div className="flex flex-col gap-6">
+          <p className="about-body font-poppins font-light text-sm md:text-base text-white/70 leading-relaxed">
+            A SOIA é uma agência de consultoria para marcas no segmento premium e luxo. SOIA vem do
+            verbo soar:{' '}
+            <em className="text-white not-italic font-normal">
+              aquilo que ecoa, permanece e cria reconhecimento
+            </em>
+            . Representamos marcas que não apenas comunicam — mas ressoam no tempo e na cultura.
+          </p>
+
+          <p className="about-body font-poppins font-light text-sm md:text-base text-white/70 leading-relaxed">
+            Idealizada por Fabiana Tomaz, com formação em Moda e atuação em marketing e
+            comportamento de consumo, a SOIA atua em posicionamento, narrativas, influência,
+            conteúdo, relações públicas, eventos e experiências — sempre a partir de uma leitura
+            profunda do que move as pessoas e o consumo contemporâneo.
+          </p>
+        </div>
       </div>
-    </section >
+    </section>
   )
 }
