@@ -29,7 +29,7 @@ export default function ContactForm() {
   })
 
   return (
-    <div className="text-white w-full max-w-4xl mx-auto p-8">
+    <div className="text-white w-full">
       <form
         onSubmit={(e) => {
           e.preventDefault()

@@ -1,16 +1,17 @@
+import { Fragment } from 'react'
+
 const PILLARS = ['OUSADA', 'CRIATIVA', 'EXCLUSIVA', 'CONTEMPORÂNEA']
 
 export default function Pillars() {
   return (
-    <section className="pillars-strip flex flex-wrap items-center justify-center gap-6 md:gap-14 py-16 px-10 border-y border-white/10">
+    <section className="pillars-strip flex flex-nowrap items-center justify-center gap-8 md:gap-16 py-10 md:py-12 px-6 md:px-10 border-y border-white/10">
       {PILLARS.map((pillar, i) => (
-        <span
-          key={pillar}
-          className="pillar-word flex items-center gap-6 md:gap-14 font-poppins font-light text-[11px] tracking-[0.4em] text-white/50 uppercase"
-        >
-          {i > 0 && <span className="text-wine text-base leading-none">·</span>}
-          {pillar}
-        </span>
+        <Fragment key={pillar}>
+          {i > 0 && <span className="w-6 md:w-10 h-px bg-taupe/30" />}
+          <span className="pillar-word font-opensauce text-xs md:text-sm tracking-[0.35em] text-white/70 uppercase">
+            {pillar}
+          </span>
+        </Fragment>
       ))}
     </section>
   )
