@@ -3,6 +3,7 @@ import { Link } from '@tanstack/react-router'
 import { Menu, X } from 'lucide-react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
+import { ScrollSmoother } from 'gsap/ScrollSmoother'
 
 const NAV_LINKS = [
   { href: '#hero', label: 'Home' },
@@ -18,6 +19,8 @@ export default function Nav() {
   const overlayRef = useRef<HTMLDivElement>(null)
 
   useGSAP(() => {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (prefersReduced) return
     gsap.from(navRef.current, {
       y: -80,
       opacity: 0,
@@ -28,9 +31,9 @@ export default function Nav() {
   }, [])
 
   useEffect(() => {
-    document.body.style.overflow = isOpen ? 'hidden' : ''
-    return () => {
-      document.body.style.overflow = ''
+    const smoother = ScrollSmoother.get()
+    if (smoother) {
+      smoother.paused(isOpen)
     }
   }, [isOpen])
 
@@ -39,7 +42,12 @@ export default function Nav() {
     if (href.startsWith('#')) {
       const target = document.querySelector(href)
       if (target) {
-        setTimeout(() => target.scrollIntoView({ behavior: 'smooth' }), 300)
+        const smoother = ScrollSmoother.get()
+        if (smoother) {
+          setTimeout(() => smoother.scrollTo(target, true), 300)
+        } else {
+          setTimeout(() => target.scrollIntoView({ behavior: 'smooth' }), 300)
+        }
       }
     }
   }
