@@ -3,6 +3,7 @@ import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { SplitText } from 'gsap/SplitText'
+import { MOTION } from '@/utils/motion'
 import SectionLabel from '@/components/ui/SectionLabel'
 import Footer from '@/components/Footer'
 
@@ -17,66 +18,57 @@ function AboutPage() {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     if (prefersReduced) return
 
-    // Hero heading — word clip reveal on load
-    const heroLines = new SplitText('.about-hero-heading', {
-      type: 'lines',
-      linesClass: 'overflow-hidden',
+    // Hero heading — blurMaterialize chars
+    const heroSplit = new SplitText('.about-hero-heading', {
+      type: 'chars',
     })
-    gsap.from(heroLines.lines, {
-      yPercent: 110,
-      stagger: 0.12,
-      duration: 0.9,
-      ease: 'power3.out',
+    gsap.from(heroSplit.chars, {
+      ...MOTION.blurMaterialize,
       delay: 0.3,
     })
 
-    // Section label fade in
+    // Hero label — breathIn
     gsap.from('.about-hero-label', {
-      x: -16,
-      opacity: 0,
+      ...MOTION.breathIn,
       duration: 0.6,
-      ease: 'power2.out',
       delay: 0.2,
     })
 
-    // Left column paragraphs — staggered fade-up
+    // Left column paragraphs — softReveal
     gsap.from('.about-body-left p', {
-      y: 20,
-      opacity: 0,
-      stagger: 0.12,
-      duration: 0.7,
-      ease: 'power2.out',
+      ...MOTION.softReveal,
+      stagger: 0.1,
       scrollTrigger: { trigger: '.about-body-left', start: 'top 80%' },
     })
 
-    // Founder accent line expands from left
+    // Founder accent line — lineBreathIn
     gsap.from('.about-founder-line', {
-      scaleX: 0,
-      transformOrigin: 'left',
-      duration: 0.6,
-      ease: 'power2.out',
+      ...MOTION.lineBreathIn,
       scrollTrigger: { trigger: '.about-founder-col', start: 'top 80%' },
     })
 
-    // Founder name + title + bio
+    // Founder name — blurMaterialize (no SplitText)
     gsap.from('.about-founder-name', {
-      y: 16,
       opacity: 0,
+      filter: 'blur(6px)',
+      y: 6,
       duration: 0.7,
       ease: 'power2.out',
       scrollTrigger: { trigger: '.about-founder-col', start: 'top 75%' },
     })
 
+    // Founder bio paragraphs — softReveal
     gsap.from('.about-founder-bio p', {
-      y: 16,
-      opacity: 0,
-      stagger: 0.12,
+      ...MOTION.softReveal,
+      stagger: 0.1,
       duration: 0.6,
-      ease: 'power2.out',
       scrollTrigger: { trigger: '.about-founder-bio', start: 'top 80%' },
     })
 
-    return () => ScrollTrigger.killAll()
+    return () => {
+      heroSplit.revert()
+      ScrollTrigger.killAll()
+    }
   })
 
   return (

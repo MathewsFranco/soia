@@ -22,9 +22,10 @@ export default function Nav() {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     if (prefersReduced) return
     gsap.from(navRef.current, {
-      y: -80,
       opacity: 0,
-      duration: 0.6,
+      y: -12,
+      filter: 'blur(4px)',
+      duration: 0.5,
       delay: 0.3,
       ease: 'power2.out',
     })
