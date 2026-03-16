@@ -53,29 +53,6 @@ body {
   }
 }
 
-/* ─── Micro-animation keyframes ─── */
-
-@keyframes fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(18px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fade-in {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-@keyframes line-expand {
-  from { transform: scaleX(0); }
-  to   { transform: scaleX(1); }
-}
-
 /* ─── Form field — floating label style ─── */
 
 .form-field {
@@ -95,7 +72,7 @@ body {
   font-weight: 300;
   font-size: 0.95rem;
   outline: none;
-  transition: border-color 0.3s ease;
+  transition: border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   caret-color: #5d2a2d;
 }
 
@@ -125,7 +102,7 @@ body {
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.35);
   pointer-events: none;
-  transition: all 0.25s ease;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   transform-origin: left top;
 }
 
@@ -164,7 +141,7 @@ header nav a::after {
   width: 0;
   height: 1px;
   background: rgba(93, 42, 45, 0.8);
-  transition: width 0.3s ease;
+  transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 header nav a:hover::after {
@@ -173,5 +150,5 @@ header nav a:hover::after {
 
 header nav a:hover {
   color: rgba(255, 255, 255, 0.9);
-  transition: color 0.2s ease;
+  transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
