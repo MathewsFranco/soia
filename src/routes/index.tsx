@@ -27,18 +27,6 @@ function HomePage() {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     if (prefersReduced) return
 
-    gsap.to('.hero-logo', {
-      opacity: 0,
-      filter: 'blur(4px)',
-      ease: 'none',
-      scrollTrigger: {
-        trigger: '#hero',
-        start: 'top top',
-        end: '30% top',
-        scrub: true,
-      },
-    })
-
     // Hero scroll-out: dissolve back into atmosphere
     gsap.to('#hero', {
       opacity: 0,
