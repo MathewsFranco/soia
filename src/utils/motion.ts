@@ -24,7 +24,7 @@ export const MOTION = {
   lineBreathIn: {
     scaleX: 0,
     opacity: 0,
-    transformOrigin: 'left',
+    transformOrigin: 'center',
     duration: 0.8,
     ease: 'power2.inOut',
   },
@@ -33,7 +33,24 @@ export const MOTION = {
     opacity: 0,
     filter: 'blur(12px)',
     scale: 1.02,
+    rotation: 0.5,
     duration: 1.2,
     ease: 'power2.inOut',
+  },
+
+  organicFloat: {
+    y: 8,
+    duration: 2.5,
+    ease: 'sine.inOut',
+    repeat: -1,
+    yoyo: true,
+  },
+
+  waveReveal: {
+    opacity: 0,
+    filter: 'blur(6px)',
+    y: 12,
+    duration: 0.8,
+    ease: 'power3.out',
   },
 } as const

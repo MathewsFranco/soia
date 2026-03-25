@@ -36,6 +36,7 @@ body {
   --color-taupe: #686058;
   --color-error: #8b2635;
   --color-success: #5d6b2f;
+  --color-warm-white: rgba(255, 252, 248, 0.82);
   --font-roswell: 'Roswell Four ITC', serif;
   --font-opensauce: 'Open Sauce One', sans-serif;
   --font-poppins: 'Poppins', sans-serif;
@@ -151,4 +152,36 @@ header nav a:hover::after {
 header nav a:hover {
   color: rgba(255, 255, 255, 0.9);
   transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ─── Scroll cue breathing ─── */
+
+@keyframes breathe {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.5; }
+}
+
+.scroll-cue-breathe {
+  animation: breathe 2.5s ease-in-out infinite;
+}
+
+/* ─── Wavy section edge ─── */
+
+.wave-edge-top,
+.wave-edge-bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 20px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.wave-edge-top {
+  top: -19px;
+}
+
+.wave-edge-bottom {
+  bottom: -19px;
+  transform: rotate(180deg);
 }
