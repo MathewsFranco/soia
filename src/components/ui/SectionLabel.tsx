@@ -6,7 +6,7 @@ interface Props {
 export default function SectionLabel({ children, className = '' }: Props) {
   return (
     <span
-      className={`font-opensauce text-[10px] tracking-[0.4em] text-taupe uppercase ${className}`}
+      className={`font-opensauce text-sm tracking-[0.3em] text-taupe uppercase ${className}`}
     >
       {children}
     </span>
