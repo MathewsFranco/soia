@@ -1,15 +1,17 @@
+import { useRef } from 'react'
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
 import SectionLabel from './ui/SectionLabel'
 
 interface Service {
-  number: string
   title: string
   description: string
   items: Array<string>
+  accentColor: string
 }
 
 const SERVICES: Array<Service> = [
   {
-    number: '01',
     title: 'Estratégia',
     description:
       'Leitura profunda do mercado, da cultura e do comportamento para construir posicionamentos que ecoam.',
@@ -19,9 +21,9 @@ const SERVICES: Array<Service> = [
       'Consultoria para marcas premium',
       'Mapeamento de Persona',
     ],
+    accentColor: 'bg-wine/40',
   },
   {
-    number: '02',
     title: 'Marca',
     description:
       'Da essência visual à voz da marca — cada detalhe alinhado a um propósito claro.',
@@ -31,9 +33,9 @@ const SERVICES: Array<Service> = [
       'Conteúdo e roteiros',
       'Seeding',
     ],
+    accentColor: 'bg-taupe/40',
   },
   {
-    number: '03',
     title: 'Marketing',
     description:
       'Ações que conectam marcas a pessoas nos momentos e espaços que importam.',
@@ -43,12 +45,56 @@ const SERVICES: Array<Service> = [
       'Relações Públicas',
       'Relacionamento',
     ],
+    accentColor: 'bg-wine/40',
   },
 ]
 
 export function Services() {
+  const sectionRef = useRef<HTMLElement>(null)
+
+  useGSAP(
+    () => {
+      const prefersReduced = window.matchMedia(
+        '(prefers-reduced-motion: reduce)',
+      ).matches
+      if (prefersReduced) return
+
+      const cards = gsap.utils.toArray<HTMLElement>('.service-card')
+      cards.forEach((card) => {
+        card.addEventListener('mouseenter', () => {
+          gsap.to(card, {
+            y: -3,
+            duration: 0.3,
+            ease: 'power2.out',
+          })
+          gsap.to(card.querySelector('.service-accent'), {
+            scaleX: 1.5,
+            opacity: 0.7,
+            duration: 0.3,
+            ease: 'power2.out',
+          })
+        })
+        card.addEventListener('mouseleave', () => {
+          gsap.to(card, {
+            y: 0,
+            duration: 0.3,
+            ease: 'power2.out',
+          })
+          gsap.to(card.querySelector('.service-accent'), {
+            scaleX: 1,
+            opacity: 1,
+            duration: 0.3,
+            ease: 'power2.out',
+          })
+        })
+      })
+    },
+    { scope: sectionRef },
+  )
+
   return (
     <section
+      ref={sectionRef}
       className="services-section px-6 md:px-16 py-24"
       id="services"
     >
@@ -58,23 +104,28 @@ export function Services() {
         {SERVICES.map((service, index) => (
           <div
             key={service.title}
-            className={`service-card flex flex-col gap-8 py-12 px-6 md:px-10 border-b md:border-b-0 border-white/8 last:border-0 ${
+            className={`service-card relative flex flex-col gap-8 py-12 px-6 md:px-10 ${
               index < SERVICES.length - 1 ? 'md:border-r' : ''
-            }`}
+            } md:border-taupe/8`}
           >
-            <span
-              className="font-roswell text-8xl text-white/[0.04] leading-none select-none pointer-events-none"
-              aria-hidden="true"
-            >
-              {service.number}
-            </span>
+            {index < SERVICES.length - 1 && (
+              <div
+                className="absolute inset-x-4 bottom-0 h-[2px] rounded-full md:hidden"
+                style={{
+                  background:
+                    'linear-gradient(to right, transparent, rgba(104, 96, 88, 0.12) 30%, rgba(104, 96, 88, 0.12) 70%, transparent)',
+                }}
+              />
+            )}
 
             <div className="flex flex-col">
-              <h3 className="font-opensauce text-base tracking-wider text-white/90 uppercase">
+              <h3 className="font-opensauce text-base tracking-wider text-white uppercase">
                 {service.title}
               </h3>
-              <div className="w-8 h-px bg-wine/40 mt-3" />
-              <p className="font-poppins font-light text-sm text-white/50 leading-relaxed max-w-[320px] mt-4">
+              <div
+                className={`service-accent w-10 h-[2px] rounded-full ${service.accentColor} mt-3 origin-left`}
+              />
+              <p className="font-poppins font-light text-sm text-[color:var(--color-warm-white)] leading-relaxed max-w-[320px] mt-4">
                 {service.description}
               </p>
             </div>
@@ -83,7 +134,7 @@ export function Services() {
               {service.items.map((item) => (
                 <li
                   key={item}
-                  className="font-poppins font-light text-sm text-white/60 flex items-center gap-3"
+                  className="font-poppins font-light text-sm text-[color:var(--color-warm-white)] flex items-center gap-3"
                 >
                   <span className="font-poppins text-taupe/60 text-xs leading-none">
                     —

@@ -9,7 +9,7 @@ export function Founder() {
           <img
             src="/founder.jpeg"
             alt="Fabiana Tomaz"
-            className="founder-photo w-full aspect-[3/4] object-cover object-top border border-white/8"
+            className="founder-photo w-full aspect-[3/4] object-cover object-top border border-taupe/10"
             style={{ filter: 'grayscale(20%) contrast(1.05)' }}
           />
         </div>
@@ -18,7 +18,7 @@ export function Founder() {
         <div className="flex flex-col gap-5 pt-0 md:pt-12">
           <SectionLabel className="block">Fundadora</SectionLabel>
 
-          <div className="founder-accent-line w-12 h-px bg-wine origin-left" />
+          <div className="founder-accent-line w-14 h-[2px] rounded-full bg-wine/80" />
 
           <h2 className="founder-name font-roswell text-4xl md:text-5xl text-white tracking-wide leading-tight">
             Fabiana Tomaz
@@ -28,13 +28,20 @@ export function Founder() {
             Fundadora & Estrategista
           </span>
 
-          <p className="font-poppins font-light text-sm md:text-base text-white/70 leading-relaxed max-w-[500px] mt-2">
+          <img
+            src="/new-logos/Logo e Variacoes-15.png"
+            alt=""
+            aria-hidden="true"
+            className="w-8 opacity-40 mt-1"
+          />
+
+          <p className="font-poppins font-light text-sm md:text-base text-[color:var(--color-warm-white)] leading-relaxed max-w-[500px] mt-2">
             Fabiana Tomaz é estrategista criativa, formada em Moda e fundadora da SOIA. Com uma
             trajetória construída entre moda, branding e comportamento, transforma cultura e
             tendências em estratégias que conectam marcas e pessoas de forma genuína e relevante.
           </p>
 
-          <p className="font-poppins font-light text-sm md:text-base text-white/70 leading-relaxed max-w-[500px]">
+          <p className="font-poppins font-light text-sm md:text-base text-[color:var(--color-warm-white)] leading-relaxed max-w-[500px]">
             Sua visão combina sensibilidade estética, pensamento estratégico e inovação para criar
             experiências que transcendem o óbvio e constroem valor simbólico, emocional e duradouro.
           </p>

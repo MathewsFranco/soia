@@ -57,13 +57,20 @@ export default function Nav() {
     <>
       <nav
         ref={navRef}
-        className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-16 h-16 bg-black border-b border-white/8"
+        className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-16 h-16 bg-black"
       >
+        <div
+          className="absolute inset-x-0 bottom-0 h-[2px] rounded-full"
+          style={{
+            background:
+              'linear-gradient(to right, transparent, rgba(104, 96, 88, 0.12) 30%, rgba(104, 96, 88, 0.12) 70%, transparent)',
+          }}
+        />
         <Link to="/">
-          <img src="/logo-test.svg" alt="SOIA" className="h-7 w-auto" />
+          <img src="/new-logos/Logo e Variacoes-16.png" alt="SOIA" className="h-8 w-auto" />
         </Link>
 
-        <div className="hidden md:flex items-center gap-10 font-poppins font-light text-[10px] tracking-widest text-white/50 uppercase">
+        <div className="hidden md:flex items-center gap-10 font-poppins font-light text-xs tracking-widest text-white/60 uppercase">
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
@@ -101,6 +108,12 @@ export default function Nav() {
         </button>
 
         <div className="flex flex-col items-center gap-8">
+          <img
+            src="/new-logos/Logo e Variacoes-05.png"
+            alt="SOIA"
+            aria-hidden="true"
+            className="w-40 opacity-60 mb-12"
+          />
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
