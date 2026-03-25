@@ -92,11 +92,11 @@ function HomePage() {
       scrollTrigger: { trigger: '.about-heading', start: 'top 70%' },
     })
 
-    // Service cards — waveReveal with stagger
-    gsap.from('.service-card', {
-      ...MOTION.waveReveal,
-      stagger: 0.15,
-      scrollTrigger: { trigger: '#services', start: 'top 85%' },
+    // Services section — breathIn for progress indicator
+    gsap.from('.services-progress', {
+      ...MOTION.breathIn,
+      duration: 0.6,
+      scrollTrigger: { trigger: '#services', start: 'top 80%' },
     })
 
     // Marquee symbol — breathIn before quote
