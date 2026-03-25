@@ -14,6 +14,7 @@ import Marquee from '@/components/Marquee'
 import { Founder } from '@/components/Founder'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
+import SectionDivider from '@/components/ui/SectionDivider'
 
 gsap.registerPlugin(ScrollTrigger, SplitText, ScrollToPlugin)
 
@@ -25,6 +26,18 @@ function HomePage() {
   useGSAP(() => {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     if (prefersReduced) return
+
+    gsap.to('.hero-logo', {
+      opacity: 0,
+      filter: 'blur(4px)',
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '#hero',
+        start: 'top top',
+        end: '30% top',
+        scrub: true,
+      },
+    })
 
     // Hero scroll-out: dissolve back into atmosphere
     gsap.to('#hero', {
@@ -40,14 +53,25 @@ function HomePage() {
       },
     })
 
-    // Pillars — breathIn with light blur, no vertical drift
+    // Pillars — breathIn with blur + y-rise
     gsap.from('.pillar-word', {
       opacity: 0,
       filter: 'blur(4px)',
+      y: 8,
       stagger: 0.08,
       duration: 0.5,
       ease: 'power2.out',
       scrollTrigger: { trigger: '.pillars-strip', start: 'top 85%' },
+    })
+
+    // Section dividers — breathIn on scroll
+    gsap.from('.section-divider', {
+      opacity: 0,
+      scale: 0.8,
+      duration: 0.6,
+      ease: 'power2.out',
+      stagger: 0.1,
+      scrollTrigger: { trigger: '.about-section', start: 'top 90%' },
     })
 
     // About section label — breathIn
@@ -57,7 +81,7 @@ function HomePage() {
       scrollTrigger: { trigger: '.about-section', start: 'top 80%' },
     })
 
-    // About heading — blurMaterialize chars
+    // About heading — blurMaterialize chars with power3
     const aboutSplit = new SplitText('.about-heading', {
       type: 'chars',
     })
@@ -65,6 +89,7 @@ function HomePage() {
       ...MOTION.blurMaterialize,
       stagger: 0.025,
       duration: 0.8,
+      ease: 'power3.out',
       scrollTrigger: {
         trigger: '.about-heading',
         start: 'top 80%',
@@ -79,12 +104,20 @@ function HomePage() {
       scrollTrigger: { trigger: '.about-heading', start: 'top 70%' },
     })
 
-    // Service cards — softReveal
+    // Service cards — waveReveal with stagger
     gsap.from('.service-card', {
-      ...MOTION.softReveal,
+      ...MOTION.waveReveal,
       stagger: 0.15,
-      duration: 0.8,
       scrollTrigger: { trigger: '#services', start: 'top 85%' },
+    })
+
+    // Marquee symbol — breathIn before quote
+    gsap.from('.marquee-symbol', {
+      opacity: 0,
+      scale: 0.6,
+      duration: 0.8,
+      ease: 'power2.out',
+      scrollTrigger: { trigger: '.marquee-section', start: 'top 80%' },
     })
 
     // Marquee quote — blurMaterialize words
@@ -104,9 +137,13 @@ function HomePage() {
       scrollTrigger: { trigger: '.marquee-section', start: 'top 80%' },
     })
 
-    // Founder accent line — lineBreathIn
+    // Founder accent line — lineBreathIn from left
     gsap.from('.founder-accent-line', {
-      ...MOTION.lineBreathIn,
+      scaleX: 0,
+      opacity: 0,
+      transformOrigin: 'left',
+      duration: 0.8,
+      ease: 'power2.inOut',
       scrollTrigger: { trigger: '.founder-section', start: 'top 75%' },
     })
 
@@ -116,14 +153,14 @@ function HomePage() {
       scrollTrigger: { trigger: '.founder-section', start: 'top 70%' },
     })
 
-    // Founder name — blurMaterialize (no SplitText needed)
+    // Founder name — blurMaterialize
     gsap.from('.founder-name', {
       opacity: 0,
       filter: 'blur(6px)',
       y: 6,
       duration: 0.7,
       delay: 0.3,
-      ease: 'power2.out',
+      ease: 'power3.out',
       scrollTrigger: { trigger: '.founder-section', start: 'top 65%' },
     })
 
@@ -158,7 +195,9 @@ function HomePage() {
       <Hero />
       <Pillars />
       <About />
+      <SectionDivider variant="line" />
       <Services />
+      <SectionDivider />
       <Marquee />
       <Founder />
       <Contact />
