@@ -20,7 +20,7 @@ function WaveEdge() {
 
 export default function Pillars() {
   return (
-    <section className="pillars-strip relative z-10 flex flex-nowrap items-center justify-center gap-8 md:gap-16 py-10 md:py-12 px-6 md:px-10 bg-black">
+    <section className="pillars-strip relative z-10 flex flex-wrap items-center justify-center gap-x-4 gap-y-3 md:flex-nowrap md:gap-x-16 py-10 md:py-12 px-6 md:px-10 overflow-hidden bg-black">
       <div
         className="wave-edge-top"
         style={{ color: 'rgba(93, 42, 45, 0.06)' }}
@@ -44,7 +44,7 @@ export default function Pillars() {
               className="w-6 md:w-8 opacity-60"
             />
           )}
-          <span className="pillar-word font-opensauce text-sm md:text-base tracking-[0.35em] text-white/85 uppercase">
+          <span className="pillar-word font-opensauce text-xs md:text-base tracking-[0.2em] md:tracking-[0.35em] text-white/85 uppercase">
             {pillar}
           </span>
         </Fragment>
