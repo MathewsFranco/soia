@@ -3,7 +3,6 @@ import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { SplitText } from 'gsap/SplitText'
 import { MOTION } from '@/utils/motion'
-import SectionLabel from './ui/SectionLabel'
 
 interface Service {
   number: string
@@ -57,7 +56,7 @@ function ServicePanel({ service }: { service: Service }) {
       <div
         className="pointer-events-none absolute top-1/2 left-6 -translate-y-1/2 select-none font-roswell leading-none md:left-16"
         style={{
-          fontSize: 'clamp(10rem, 20vw, 22rem)',
+          fontSize: 'clamp(6rem, 20vw, 22rem)',
           color: 'rgba(93, 42, 45, 0.04)',
         }}
         aria-hidden="true"
@@ -68,12 +67,12 @@ function ServicePanel({ service }: { service: Service }) {
       <div className="relative z-10 grid w-full grid-cols-1 items-center gap-10 md:grid-cols-12 md:gap-0">
         <div className="flex flex-col md:col-span-7">
           <div className="flex items-start gap-4">
-            <div className="service-margin-block mt-3 h-8 w-[3px] shrink-0 bg-wine/60" />
+            <div className="service-margin-block mt-3 h-10 w-1 shrink-0 bg-wine/80" />
             <div className="flex flex-col">
               <h3
                 className="service-title font-roswell text-white"
                 style={{
-                  fontSize: 'clamp(3.5rem, 9vw, 8rem)',
+                  fontSize: 'clamp(2.25rem, 9vw, 8rem)',
                   lineHeight: 0.95,
                 }}
               >
@@ -86,7 +85,7 @@ function ServicePanel({ service }: { service: Service }) {
           </div>
         </div>
 
-        <div className="service-divider-line hidden h-[50vh] w-[1px] bg-wine/15 md:col-span-1 md:mx-auto md:block" />
+        <div className="service-divider-line hidden h-[50vh] w-[1px] md:col-span-1 md:mx-auto md:block" />
 
         <ul className="flex flex-col gap-5 md:col-span-4">
           {service.items.map((item) => (
@@ -94,11 +93,11 @@ function ServicePanel({ service }: { service: Service }) {
               key={item}
               className="service-item group flex cursor-default items-center gap-4"
             >
-              <span className="service-item-bar h-[1px] w-6 shrink-0 bg-wine/30 transition-all duration-300 ease-out group-hover:w-10 group-hover:bg-wine/60" />
-              <span className="service-item-text relative font-opensauce text-sm tracking-wider text-white/85 uppercase md:text-base">
+              <span className="service-item-bar h-[2px] w-8 shrink-0 bg-wine/50 transition-all duration-300 ease-out group-hover:w-14 group-hover:bg-wine" />
+              <span className="service-item-text relative font-opensauce text-sm tracking-wider text-white/85 uppercase transition-colors duration-300 group-hover:text-white md:text-base">
                 {item}
                 <span
-                  className="service-item-underline absolute bottom-[-2px] left-0 h-[1px] w-full origin-left scale-x-0 bg-wine/60"
+                  className="service-item-underline absolute bottom-[-2px] left-0 h-[2px] w-full origin-left scale-x-0 bg-wine/80"
                   aria-hidden="true"
                 />
               </span>
@@ -120,16 +119,14 @@ function ProgressIndicator({
       {SERVICES.map((service, index) => (
         <span
           key={service.number}
-          className={`font-opensauce text-xs tracking-[0.3em] uppercase transition-all duration-500 ${
-            index === activeIndex ? 'text-white' : 'text-taupe/30'
-          }`}
+          className={`font-opensauce text-xs tracking-[0.3em] uppercase transition-all duration-500 ${index === activeIndex ? 'text-white' : 'text-taupe/30'
+            }`}
           aria-label={service.title}
         >
           {service.number}
           <span
-            className={`mt-1 block h-[1px] origin-left bg-wine/60 transition-transform duration-500 ${
-              index === activeIndex ? 'scale-x-100' : 'scale-x-0'
-            }`}
+            className={`mt-1 block h-[2px] origin-left bg-wine/80 transition-transform duration-500 ${index === activeIndex ? 'scale-x-100' : 'scale-x-0'
+              }`}
           />
         </span>
       ))}
@@ -191,18 +188,18 @@ export function Services() {
           const baseTrigger =
             index === 0
               ? {
-                  trigger: panel,
-                  start: 'top 80%',
-                  toggleActions:
-                    'play none none none' as const,
-                }
+                trigger: panel,
+                start: 'top 80%',
+                toggleActions:
+                  'play none none none' as const,
+              }
               : {
-                  trigger: panel,
-                  start: 'left 70%',
-                  containerAnimation: scrollTween,
-                  toggleActions:
-                    'play none none none' as const,
-                }
+                trigger: panel,
+                start: 'left 70%',
+                containerAnimation: scrollTween,
+                toggleActions:
+                  'play none none none' as const,
+              }
 
           gsap.from(split.chars, {
             ...MOTION.blurMaterialize,
@@ -367,9 +364,12 @@ export function Services() {
     >
       <ProgressIndicator activeIndex={activeIndex} />
 
-      <SectionLabel className="absolute top-8 right-8 z-20 block md:right-20">
-        O que fazemos
-      </SectionLabel>
+      <div className="absolute top-8 right-8 z-20 flex items-center gap-3 md:right-20">
+        <span className="h-[2px] w-6 bg-wine/80" />
+        <span className="font-opensauce text-xs tracking-[0.3em] text-white/80 uppercase md:text-sm">
+          O que fazemos
+        </span>
+      </div>
 
       <div className="services-track flex h-screen w-[300vw] items-center max-md:h-auto max-md:w-full max-md:flex-col max-md:gap-16 max-md:px-6 max-md:py-24">
         {SERVICES.map((service) => (
