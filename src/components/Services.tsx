@@ -154,9 +154,10 @@ export function Services() {
       const splits: Array<InstanceType<typeof SplitText>> = []
 
       if (isDesktop) {
-        const track = sectionRef.current?.querySelector(
-          '.services-track',
-        ) as HTMLElement
+        const track =
+          sectionRef.current?.querySelector<HTMLElement>(
+            '.services-track',
+          )
         if (!track) return
 
         const scrollTween = gsap.to(track, {
@@ -267,9 +268,10 @@ export function Services() {
         const items =
           gsap.utils.toArray<HTMLElement>('.service-item')
         items.forEach((item) => {
-          const underline = item.querySelector(
-            '.service-item-underline',
-          ) as HTMLElement
+          const underline =
+            item.querySelector<HTMLElement>(
+              '.service-item-underline',
+            )
           if (!underline) return
 
           item.addEventListener('mouseenter', () => {
