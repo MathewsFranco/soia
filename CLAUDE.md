@@ -19,14 +19,6 @@ At the start of every session, run `/prime`.
 
 ---
 
-## The Claude-User Relationship
-
-- **User (Mathews):** Frontend developer. Defines goals, provides context, and directs work.
-- **How Claude is used:** Generate and improve UI code, suggest layout and typography adjustments, troubleshoot styling and responsive issues. Review component structure, improve visual consistency, and support SEO and content implementation.
-- **Claude:** Reads context, understands objectives, executes commands, produces outputs.
-
----
-
 ## Build Commands
 
 - `npm run dev` — Start dev server on port 3000
@@ -94,6 +86,7 @@ At the start of every session, run `/prime`.
 - GSAP for all animations — register plugins once, clean up on unmount
 - ScrollSmoother wraps the entire page (`#smooth-wrapper` / `#smooth-content`)
 - Respect `prefers-reduced-motion`
+- Animation presets live in `src/utils/motion.ts` as the `MOTION` object — use these instead of inline values
 
 ### General Rules
 
@@ -109,7 +102,6 @@ At the start of every session, run `/prime`.
 ```
 src/
 ├── components/
-│   ├── Nav.tsx
 │   ├── Hero.tsx
 │   ├── Pillars.tsx
 │   ├── About.tsx
@@ -120,15 +112,18 @@ src/
 │   ├── Footer.tsx
 │   ├── ContactForm/
 │   └── ui/
-│       └── SectionLabel.tsx
+│       ├── SectionLabel.tsx
+│       └── SectionDivider.tsx
 ├── routes/
 │   ├── __root.tsx       ← ScrollSmoother, SEO meta
 │   ├── index.tsx        ← all sections + GSAP orchestration
 │   └── about.tsx
+├── utils/
+│   └── motion.ts        ← MOTION animation presets
 └── styles.css           ← Tailwind theme, font tokens, keyframes
 public/
-├── logo-test.svg
-├── logomark-white.png
+├── new-logos/           ← logo variants (-05, -08, -15, -16, -17, -20 in use)
+├── fonts/               ← Roswell, Open Sauce One
 └── founder.jpeg
 ```
 
