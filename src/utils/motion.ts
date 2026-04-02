@@ -38,14 +38,6 @@ export const MOTION = {
     ease: 'power2.inOut',
   },
 
-  organicFloat: {
-    y: 8,
-    duration: 2.5,
-    ease: 'sine.inOut',
-    repeat: -1,
-    yoyo: true,
-  },
-
   waveReveal: {
     opacity: 0,
     filter: 'blur(6px)',
