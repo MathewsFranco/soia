@@ -1,14 +1,16 @@
-interface TextAreaFieldProps {
-  field: any
-  label: string
-  placeholder: string
-  rows?: number
+interface FieldState {
+  name: string
+  state: { value: string; meta: { errors: Array<string | undefined> } }
+  handleBlur: () => void
+  handleChange: (value: string) => void
 }
 
-export function TextAreaField({
-  field,
-  label,
-}: TextAreaFieldProps) {
+interface TextAreaFieldProps {
+  field: FieldState
+  label: string
+}
+
+export function TextAreaField({ field, label }: TextAreaFieldProps) {
   const hasErrors = field.state.meta.errors.length > 0
 
   return (

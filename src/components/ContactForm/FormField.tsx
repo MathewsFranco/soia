@@ -1,15 +1,17 @@
+interface FieldState {
+  name: string
+  state: { value: string; meta: { errors: Array<string | undefined> } }
+  handleBlur: () => void
+  handleChange: (value: string) => void
+}
+
 interface FormFieldProps {
-  field: any
+  field: FieldState
   label: string
-  placeholder: string
   type?: 'text' | 'email'
 }
 
-export function FormField({
-  field,
-  label,
-  type = 'text',
-}: FormFieldProps) {
+export function FormField({ field, label, type = 'text' }: FormFieldProps) {
   const hasErrors = field.state.meta.errors.length > 0
 
   return (
