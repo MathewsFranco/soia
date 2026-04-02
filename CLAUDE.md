@@ -181,6 +181,19 @@ Loaded automatically from `.claude/rules/`:
 
 ---
 
+## Frontend Aesthetics
+
+Avoid generic "AI slop" aesthetics. Make creative, distinctive frontends that surprise and delight.
+
+- **Typography:** Choose beautiful, unique fonts. Avoid generic fonts like Arial, Inter, Roboto, system fonts. Opt for distinctive choices that elevate aesthetics. Avoid converging on common choices (e.g. Space Grotesk) across generations.
+- **Color & Theme:** Commit to a cohesive aesthetic. Use CSS variables for consistency. Dominant colors with sharp accents outperform timid, evenly-distributed palettes. Draw from IDE themes and cultural aesthetics for inspiration. Avoid cliched color schemes (particularly purple gradients on white backgrounds).
+- **Motion:** Use animations for effects and micro-interactions. Prioritize CSS-only solutions for HTML. Use GSAP for React (project standard). Focus on high-impact moments: one well-orchestrated page load with staggered reveals (`animation-delay`) creates more delight than scattered micro-interactions.
+- **Backgrounds:** Create atmosphere and depth rather than defaulting to solid colors. Layer CSS gradients, use geometric patterns, or add contextual effects that match the overall aesthetic.
+- **Layouts:** Avoid predictable layouts and cookie-cutter component patterns. Make unexpected choices that feel genuinely designed for the context.
+- **Variety:** Vary between light and dark themes, different fonts, different aesthetics. Think outside the box — never settle for the first obvious choice.
+
+---
+
 ## Design Reference
 
 See `soia-design` workspace for the full redesign plan (`plans/website-redesign.md`) and design system (`outputs/design-system.md`).
