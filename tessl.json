@@ -1,0 +1,15 @@
+{
+  "name": "my-project",
+  "mode": "vendored",
+  "dependencies": {
+    "secondsky/claude-skills": {
+      "version": "90d6bd7de47ac8f79bdf2f2d06b26d513814f764",
+      "source": "https://github.com/secondsky/claude-skills",
+      "include": {
+        "skills": [
+          "responsive-web-design"
+        ]
+      }
+    }
+  }
+}
