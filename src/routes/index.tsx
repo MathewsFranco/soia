@@ -27,20 +27,6 @@ function HomePage() {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     if (prefersReduced) return
 
-    // Hero scroll-out: dissolve back into atmosphere
-    gsap.to('#hero', {
-      opacity: 0,
-      scale: 0.97,
-      filter: 'blur(6px)',
-      ease: 'none',
-      scrollTrigger: {
-        trigger: '#hero',
-        start: 'bottom 80%',
-        end: 'bottom 20%',
-        scrub: 1,
-      },
-    })
-
     // Pillars — breathIn with blur + y-rise
     gsap.from('.pillar-word', {
       opacity: 0,
