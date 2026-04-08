@@ -9,7 +9,7 @@ import { FormField } from './FormField'
 import { TextAreaField } from './TextAreaField'
 import { SubmitButton } from './SubmitButton'
 import { ResultMessage } from './ResultMessage'
-import { LABELS, PLACEHOLDERS } from './utils/constants'
+import { LABELS } from './utils/constants'
 
 export default function ContactForm() {
   const { submitResult, isSubmitting, submitForm } = useContactForm()
@@ -29,7 +29,7 @@ export default function ContactForm() {
   })
 
   return (
-    <div className="text-white w-full max-w-4xl mx-auto p-8">
+    <div className="text-white w-full">
       <form
         onSubmit={(e) => {
           e.preventDefault()
@@ -45,11 +45,7 @@ export default function ContactForm() {
           }}
         >
           {(field) => (
-            <FormField
-              field={field}
-              label={LABELS.name}
-              placeholder={PLACEHOLDERS.name}
-            />
+            <FormField field={field} label={LABELS.name} />
           )}
         </form.Field>
 
@@ -60,12 +56,7 @@ export default function ContactForm() {
           }}
         >
           {(field) => (
-            <FormField
-              field={field}
-              label={LABELS.email}
-              placeholder={PLACEHOLDERS.email}
-              type="email"
-            />
+            <FormField field={field} label={LABELS.email} type="email" />
           )}
         </form.Field>
 
@@ -76,11 +67,7 @@ export default function ContactForm() {
           }}
         >
           {(field) => (
-            <TextAreaField
-              field={field}
-              label={LABELS.message}
-              placeholder={PLACEHOLDERS.message}
-            />
+            <TextAreaField field={field} label={LABELS.message} />
           )}
         </form.Field>
 

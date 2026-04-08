@@ -1,62 +1,202 @@
 @import 'tailwindcss';
 
 body {
+  margin: 0;
+  padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #000000;
+  /* Warm wine glow at corners — visible throughout all page sections */
+  background-image:
+    radial-gradient(ellipse 70% 50% at 90% 2%, rgba(93, 42, 45, 0.22) 0%, transparent 65%),
+    radial-gradient(ellipse 55% 40% at 10% 95%, rgba(93, 42, 45, 0.16) 0%, transparent 60%);
 }
 
 @font-face {
-  font-family: 'Glacial Indifference';
-  src: url('/fonts/GlacialIndifference-Regular.otf') format('opentype');
+  font-family: 'Roswell Four ITC';
+  src: url('/fonts/Roswell%20Four%20ITC%20Std%20Regular.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Glacial Indifference';
-  src: url('/fonts/GlacialIndifference-Bold.otf') format('opentype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'cy Grotesk Grand';
-  src: url('/fonts/Cy-Grotesk-Grand.otf') format('opentype');
+  font-family: 'Extenda 40';
+  src: url('/fonts/Extenda-40-Hecto.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-}
-
-code {
-  font-family:
-    source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 @theme {
   --color-*: initial;
-  --color-black: #101820;
-  --color-white: #f2f2f0;
-  --color-parchment: #f2eeca;
-  --color-crimson: #551c25;
-  --color-tortilla: #c7b9ac;
-  --color-sage: #4e4934;
-  --color-clay: #623412;
-  --color-amber: #d29f13;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-wine: #5d2a2d;
+  --color-taupe: #686058;
   --color-error: #8b2635;
   --color-success: #5d6b2f;
-  --font-glacial: 'Glacial Indifference', system-ui;
-  --font-cy-grotesk: 'cy Grotesk Grand', system-ui;
+  --color-warm-white: rgba(255, 252, 248, 0.82);
+  --font-roswell: 'Roswell Four ITC', serif;
+  --font-opensauce: 'Open Sauce One', sans-serif;
+  --font-poppins: 'Poppins', sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
+html,
+body {
+  overflow-x: hidden;
 }
 
 @layer base {
   html,
   body {
-    font-family: var(--font-glacial);
+    font-family: var(--font-poppins);
   }
+}
+
+/* ─── Form field — floating label style ─── */
+
+.form-field {
+  position: relative;
+  padding-top: 1.5rem;
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0.75rem 0;
+  color: #ffffff;
+  font-family: var(--font-poppins);
+  font-weight: 300;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  caret-color: #5d2a2d;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: transparent;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  border-bottom-color: #5d2a2d;
+}
+
+.form-field--error input,
+.form-field--error textarea {
+  border-bottom-color: rgba(139, 38, 53, 0.6);
+}
+
+.form-field label {
+  position: absolute;
+  left: 0;
+  top: 1.5rem;
+  font-family: var(--font-poppins);
+  font-weight: 300;
+  font-size: 0.875rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35);
+  pointer-events: none;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: left top;
+}
+
+/* Float label up when focused or has value */
+.form-field input:focus ~ label,
+.form-field input:not(:placeholder-shown) ~ label,
+.form-field textarea:focus ~ label,
+.form-field textarea:not(:placeholder-shown) ~ label {
+  top: 0.1rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.form-field input:focus ~ label,
+.form-field textarea:focus ~ label {
+  color: rgba(93, 42, 45, 0.9);
+}
+
+.form-field textarea {
+  resize: none;
+  min-height: 100px;
+}
+
+/* ─── Scroll cue breathing ─── */
+
+@keyframes breathe {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.5; }
+}
+
+.scroll-cue-breathe {
+  animation: breathe 2.5s ease-in-out infinite;
+}
+
+/* ─── Services section ─── */
+
+.service-stage {
+  position: relative;
+}
+
+.service-media {
+  overflow: hidden;
+  will-change: transform, opacity, filter;
+}
+
+.service-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.service-media--mobile {
+  opacity: 0.35;
+}
+
+.service-media-tint {
+  position: absolute;
+  inset: 0;
+  background: var(--color-wine);
+  mix-blend-mode: multiply;
+  opacity: 0.12;
+  pointer-events: none;
+  transition: opacity 600ms ease-out;
+}
+
+.service-media:hover .service-media-tint {
+  opacity: 0.18;
+}
+
+.service-copy .service-title {
+  color: #ffffff;
+  mix-blend-mode: difference;
+}
+
+/* ─── Wavy section edge ─── */
+
+.wave-edge-top,
+.wave-edge-bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 20px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.wave-edge-top {
+  top: -19px;
+}
+
+.wave-edge-bottom {
+  bottom: -19px;
+  transform: rotate(180deg);
 }

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { WEB3_FORMS_CONFIG, MESSAGES } from './utils/constants'
+import { MESSAGES, WEB3_FORMS_CONFIG } from './utils/constants'
 
 interface Web3FormsResponse {
   success: boolean

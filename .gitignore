@@ -8,3 +8,11 @@ count.txt
 .nitro
 .tanstack
 .vscode
+.zed
+.playwright-mcp
+
+# Personal Claude overrides (not shared with team)
+CLAUDE.local.md
+
+# Work products (generated outputs)
+outputs/

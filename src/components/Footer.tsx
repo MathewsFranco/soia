@@ -1,34 +1,21 @@
-import ContactForm from './ContactForm/ContactForm'
-
-const Footer = ({ color = 'black' }: { color?: string }) => {
+export default function Footer() {
   return (
-    <section
-      className={`bg-${color} text-white flex flex-col items-center p-10 pb-15 gap-12`}
-      id="footer"
-    >
-      <img src="/soia-logo-white.png" alt="soia-logo" className="w-100" />
-      <a
-        href="https://www.instagram.com/soiaconnect/"
-        target="_blank"
-        className="flex items-center gap-4 "
-        rel="noopener"
-      >
-        <img
-          src="/instagram-logo.png"
-          alt="Instagram Logo"
-          className="w-8 h-8"
-        />
-        <p className="text-3xl">Follow us</p>
-      </a>
-      <a
-        href="mailto:comercial@soiaconnect.com.br"
-        className="text-xl md:text-3xl font-bold"
-      >
-        comercial@soiaconnect.com.br
-      </a>
-      <ContactForm />
-    </section>
+    <footer className="relative px-6 md:px-16 py-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
+      <div
+        className="absolute inset-x-0 top-0 h-[2px] rounded-full"
+        style={{
+          background:
+            'linear-gradient(to right, transparent, rgba(104, 96, 88, 0.15) 30%, rgba(104, 96, 88, 0.15) 70%, transparent)',
+        }}
+      />
+      <div className="flex items-center gap-4">
+        <span className="font-poppins font-light text-xs tracking-[0.35em] text-white/35 uppercase">
+          © {new Date().getFullYear()} SOIA — Agência Boutique
+        </span>
+      </div>
+      <span className="font-poppins font-light text-xs tracking-[0.35em] text-white/35 uppercase">
+        Estratégia · Cultura · Branding
+      </span>
+    </footer>
   )
 }
-
-export default Footer
