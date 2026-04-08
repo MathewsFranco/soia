@@ -2,12 +2,13 @@ import { useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { SplitText } from 'gsap/SplitText'
-import { MOTION } from '@/utils/motion'
 
 interface Service {
   title: string
   description: string
   items: Array<string>
+  image: string
+  imageAlt: string
 }
 
 const SERVICES: Array<Service> = [
@@ -21,6 +22,9 @@ const SERVICES: Array<Service> = [
       'Consultoria para marcas premium',
       'Mapeamento de Persona',
     ],
+    image: '/Mockups/Mockup 9.jpeg',
+    imageAlt:
+      'Direção estratégica aplicada em peças e materiais de marca',
   },
   {
     title: 'Marca',
@@ -32,6 +36,9 @@ const SERVICES: Array<Service> = [
       'Conteúdo e roteiros',
       'Seeding',
     ],
+    image: '/Mockups/Mockup 7.jpeg',
+    imageAlt:
+      'Aplicação de identidade visual em material impresso',
   },
   {
     title: 'Marketing',
@@ -43,6 +50,9 @@ const SERVICES: Array<Service> = [
       'Relações Públicas',
       'Relacionamento',
     ],
+    image: '/Mockups/Mockup 6.jpeg',
+    imageAlt:
+      'Campanha de marca em contexto de experiência ao público',
   },
 ]
 
@@ -54,61 +64,78 @@ function ServicePanel({
   index: number
 }) {
   const isReversed = index % 2 !== 0
+  const mediaSide = isReversed ? 'right-0' : 'left-0'
 
   return (
-    <div className="service-panel relative py-24 md:py-32">
-      <div
-        className={`relative z-10 grid w-full grid-cols-1 items-start gap-12 px-8 md:grid-cols-12 md:gap-0 md:px-20 ${isReversed ? 'md:direction-rtl' : ''}`}
-        style={
-          isReversed ? { direction: 'rtl' } : undefined
-        }
-      >
+    <div className="service-panel relative flex min-h-screen items-center px-6 py-24 md:px-16">
+      <div className="service-stage relative mx-auto h-[78vh] w-full max-w-[1400px]">
         <div
-          className="flex flex-col md:col-span-6"
-          style={
-            isReversed ? { direction: 'ltr' } : undefined
-          }
+          className={`service-media absolute top-1/2 hidden h-[68%] w-[58%] -translate-y-1/2 md:block ${mediaSide}`}
         >
-          <div className="flex flex-col">
-              <h3
-                className="service-title font-roswell text-white"
-                style={{
-                  fontSize: 'clamp(2.25rem, 7vw, 6rem)',
-                  lineHeight: 0.95,
-                }}
-              >
-                {service.title}
-              </h3>
-              <p className="service-description mt-6 max-w-[440px] font-poppins text-base font-light leading-relaxed text-[color:var(--color-warm-white)]">
-                {service.description}
-              </p>
-          </div>
+          <img
+            src={service.image}
+            alt={service.imageAlt}
+            loading="lazy"
+            decoding="async"
+          />
+          <div className="service-media-tint" aria-hidden />
         </div>
 
-        <div className="md:col-span-1" />
-
-        <ul
-          className="flex flex-col gap-5 md:col-span-5 md:pt-4"
-          style={
-            isReversed ? { direction: 'ltr' } : undefined
-          }
+        <div
+          className="service-media service-media--mobile absolute inset-0 md:hidden"
+          aria-hidden
         >
-          {service.items.map((item) => (
-            <li
-              key={item}
-              className="service-item group flex cursor-default items-center gap-4"
-            >
-              <span className="service-item-bar h-[2px] w-8 shrink-0 bg-wine/50 transition-all duration-300 ease-out group-hover:w-14 group-hover:bg-wine" />
-              <span className="service-item-text font-opensauce text-sm tracking-wider text-white/85 uppercase transition-colors duration-300 group-hover:text-white md:text-base">
-                {item}
-              </span>
-            </li>
-          ))}
-        </ul>
+          <img
+            src={service.image}
+            alt=""
+            loading="lazy"
+            decoding="async"
+          />
+          <div className="service-media-tint" />
+        </div>
+
+        <div
+          className={`service-copy relative z-10 flex h-full w-full flex-col justify-center md:absolute md:top-1/2 md:w-[52%] md:-translate-y-1/2 ${
+            isReversed
+              ? 'md:left-0 md:items-start md:pr-8'
+              : 'md:right-0 md:items-end md:pl-8 md:text-right'
+          }`}
+        >
+          <h3
+            className="service-title font-roswell"
+            style={{
+              fontSize: 'clamp(2.75rem, 8vw, 7rem)',
+              lineHeight: 0.9,
+            }}
+          >
+            {service.title}
+          </h3>
+          <p className="service-description mt-6 max-w-[440px] font-poppins text-base font-light leading-relaxed text-[color:var(--color-warm-white)]">
+            {service.description}
+          </p>
+          <ul
+            className={`mt-10 flex flex-col gap-4 ${
+              !isReversed ? 'md:items-end' : ''
+            }`}
+          >
+            {service.items.map((item) => (
+              <li
+                key={item}
+                className={`service-item flex items-center ${
+                  !isReversed ? 'md:flex-row-reverse' : ''
+                }`}
+              >
+                <span className="service-item-text font-opensauce text-sm tracking-wider text-white uppercase md:text-base">
+                  {item}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
 
       {index < SERVICES.length - 1 && (
-        <div className="service-separator mx-auto mt-24 h-[1px] w-24 bg-wine/20 md:mt-32" />
+        <div className="service-separator absolute bottom-12 left-1/2 h-[1px] w-24 -translate-x-1/2 bg-wine/20" />
       )}
     </div>
   )
@@ -129,56 +156,93 @@ export function Services() {
       const splits: Array<InstanceType<typeof SplitText>> =
         []
 
-      panels.forEach((panel) => {
+      panels.forEach((panel, panelIndex) => {
+        const isReversed = panelIndex % 2 !== 0
         const title = panel.querySelector('.service-title')
-        if (!title) return
+        const media = panel.querySelectorAll<HTMLElement>('.service-media')
 
-        const split = new SplitText(title, {
-          type: 'chars',
-        })
-        splits.push(split)
+        if (media.length) {
+          const clipStart = isReversed
+            ? 'inset(0 0% 0 100%)'
+            : 'inset(0 100% 0 0%)'
 
-        gsap.from(split.chars, {
-          ...MOTION.blurMaterialize,
-          stagger: 0.02,
-          duration: 0.8,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: panel,
-            start: 'top 80%',
-            once: true,
-          },
-        })
+          gsap.fromTo(
+            media,
+            { clipPath: clipStart },
+            {
+              clipPath: 'inset(0 0% 0 0%)',
+              duration: 1.2,
+              ease: 'expo.out',
+              scrollTrigger: {
+                trigger: panel,
+                start: 'top 75%',
+                once: true,
+              },
+            },
+          )
 
-        gsap.from(
-          panel.querySelector('.service-description'),
-          {
-            ...MOTION.softReveal,
-            delay: 0.15,
+          gsap.to(media, {
+            yPercent: -8,
+            ease: 'none',
             scrollTrigger: {
               trigger: panel,
-              start: 'top 80%',
-              once: true,
+              start: 'top bottom',
+              end: 'bottom top',
+              scrub: 1.2,
             },
-          },
-        )
+          })
+        }
 
-        gsap.from(
-          panel.querySelectorAll('.service-item'),
-          {
-            ...MOTION.waveReveal,
-            stagger: 0.08,
+        if (title) {
+          const split = new SplitText(title, { type: 'chars' })
+          splits.push(split)
+
+          gsap.set(title, { perspective: 600 })
+          gsap.from(split.chars, {
+            y: 80,
+            rotationX: -90,
+            opacity: 0,
+            stagger: 0.028,
+            duration: 0.7,
+            delay: 0.25,
+            ease: 'back.out(1.5)',
             scrollTrigger: {
               trigger: panel,
               start: 'top 75%',
               once: true,
             },
-          },
-        )
+          })
+        }
 
-        const separator = panel.querySelector(
-          '.service-separator',
-        )
+        const xDir = isReversed ? -40 : 40
+        gsap.from(panel.querySelector('.service-description'), {
+          x: xDir,
+          opacity: 0,
+          duration: 0.7,
+          delay: 0.5,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: panel,
+            start: 'top 75%',
+            once: true,
+          },
+        })
+
+        gsap.from(panel.querySelectorAll('.service-item'), {
+          x: isReversed ? -30 : 30,
+          opacity: 0,
+          stagger: 0.07,
+          delay: 0.65,
+          duration: 0.55,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: panel,
+            start: 'top 75%',
+            once: true,
+          },
+        })
+
+        const separator = panel.querySelector('.service-separator')
         if (separator) {
           gsap.from(separator, {
             scaleX: 0,
